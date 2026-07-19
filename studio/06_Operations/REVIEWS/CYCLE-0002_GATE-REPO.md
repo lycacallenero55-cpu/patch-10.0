@@ -1,0 +1,172 @@
+# QA Review — CYCLE-0002 GATE(④)
+
+- **Date:** 2026-07-19 · **Author:** ⑤ Quality Assurance · **Task ID:** TASK-0019 (gate review, per DEC-0013)
+- **Scope:** ONLY ④'s CYCLE-0002 turn — the two commits descending from base `31b36ee39044c8d545a588443add7137c6d404d9` (⑤'s GATE(③) PASS): `cedeb5841e508c6ff3ea36dba89f8865fb2dbb12` (TASK-0019 content: `CANON_REGISTRY.md` §3/§4 stub completion + `OPEN_QUESTIONS.md` Q-15–Q-18 + `INDEX.md` refresh) and `8ae5b112971a3cc62611396d0a9b4d4e8e6bf347` (handoff `HANDOFFS/CYCLE-0002-REPO.md`, = HEAD at gate time). Verified: commit chain and hygiene; lane + shape (Amendment 1 §A1.2 as modified by the TASK-0019 dispatch, incl. the task-authorized `OPEN_QUESTIONS.md` exception); opcode-level registry edit discipline; THE RAZOR (compile-cite-never-author — compiled rows re-verified against primary sources; silence claims verified by absence; DRAFT-PROPOSAL labeling; T2-seal discipline; no UNDECIDED resolved); OPEN_QUESTIONS append purity, QA-09 mapping, and Q-number collision; INDEX refresh accuracy against repo reality; token-level Drive-id/link leak scan; handoff manifest accuracy; and adjudication of the Professor-Im observation ④ flagged. The four pre-declared deviations are judged against the dispatch, not against a one-commit default. This review makes no edit to any ④ file or any file outside ⑤'s own lane (Handbook §8.5 "Authority"; §21 "Gates verify; they never fix"). QA numbering continues from QA-229 (`REVIEWS/CYCLE-0002_GATE-VISUAL.md`).
+- **Method note:** every claim below was re-derived from primary sources — full clone of `main` at HEAD `8ae5b112…`; commit topology and per-commit file lists from the git object store (`git log/diff-tree`, zero-context diffs); git blob SHA-1s recomputed locally as `sha1("blob <len>\0" + bytes)` from raw blob bytes for all four changed files; GitHub's independently reported blob SHA cross-checked via the contents API for the largest file (registry at `cedeb584`); every quoted source claim re-grepped at pinned HEAD. ④'s handoff was used as the claim list under test, never as evidence.
+
+## Findings
+
+### QA-230 — Commit chain and message hygiene confirmed
+- **Severity:** N/A (positive confirmation, not a defect)
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** `git log 31b36ee3..HEAD` returns exactly two commits, nothing interleaved: `cedeb5841e508c6ff3ea36dba89f8865fb2dbb12` (sole parent `31b36ee39044c8d545a588443add7137c6d404d9`) → `8ae5b112971a3cc62611396d0a9b4d4e8e6bf347` (sole parent `cedeb584…`) = HEAD at gate time. Both messages carry the `[④-REPO] ` prefix and are descriptive to the house standard — the content commit states the §3/§4 completion terms, the Q-15–Q-18 mapping with collision result, the INDEX add/correct inventory, and the razor attestations ("No locks, no retcons, no decisions, no Drive ids/links") directly in the message; the handoff commit declares its own deviation rationale. The two-commit shape is deviation (a), pre-declared in the dispatch and verified structurally necessary: the handoff's ⑤-gate manifest cites commit 1's real SHA and blob hashes, which cannot exist before commit 1 does (QA-12 chicken-and-egg; OPS-0002 trailing-handoff precedent, `3d58a965…`).
+- **Governing source:** DEC-0013 / Amendment 2 §A2.3 (gate mechanics); Amendment 1 §A1.4 (commit hygiene); ①'s conductor record of the turn base; `HANDOFFS/OPS-0002-REPO.md` (precedent).
+- **Consequence:** None.
+- **Owner role:** N/A.
+- **Recommended action:** None required.
+- **Status:** RESOLVED (verified this gate).
+
+### QA-231 — Lane + shape confirmed: 3 files + 1 file exactly as claimed; zero binaries; all four blobs recompute byte-exactly
+- **Severity:** N/A (positive confirmation)
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** `git diff-tree` per commit: `cedeb584` touches ONLY `studio/06_Operations/OPEN_QUESTIONS.md` (+4/−0), `studio/07_Repository/CANON_REGISTRY.md` (+44/−4), `studio/07_Repository/INDEX.md` (+27/−13) — all mode 100644 modifications; `8ae5b112` touches ONLY `studio/06_Operations/HANDOFFS/CYCLE-0002-REPO.md` (+70/−0, added, 100644). Exactly the claimed manifest; no other ops doc, nothing under `manuscript/`, `02_Art/`, `04_Storyboards/`, `readers/`, `REVIEWS/`, no other `HANDOFFS/` file, zero binaries (all numstats numeric). Blob SHA-1s recomputed from raw bytes: `CANON_REGISTRY.md` @ `cedeb584` → 59,935 B → `d0323b8dbcf108c371a45499394c09df0b625749`; `INDEX.md` → 26,030 B → `677669fb616245d447c9206bc79a227880ef45ff`; `OPEN_QUESTIONS.md` → 2,618 B → `1efc9529aaff6019bf0de8178d5cedafff7a63bf`; `CYCLE-0002-REPO.md` @ `8ae5b112` → 13,766 B → `5a0da1177f585a92303e4374ae454eabc7d29b37`. All four equal ④'s claimed values AND the git tree's own ids; GitHub's contents API independently reports `d0323b8d…` for the registry at `cedeb584` (download-integrity cross-check). HEAD's tree carries identical blob ids for the three commit-1 files — the handoff commit modified nothing it didn't add. The `OPEN_QUESTIONS.md` write is deviation (d), verified task-authorized and verified append-only (QA-234); no other ops file touched — ①'s ops lease honored.
+- **Governing source:** Amendment 1 §A1.2 (lanes) as modified by the TASK-0019 dispatch; `HANDOFFS/CYCLE-0002-EP.md` (④ assignment); QA-12 verification convention.
+- **Consequence:** None — the manifest ④ handed ⑤ is byte-true.
+- **Owner role:** N/A.
+- **Recommended action:** None required.
+- **Status:** RESOLVED (verified this gate).
+
+### QA-232 — Registry edit discipline verified at opcode level: the −4 are exactly the four declared in-place replacements; everything else byte-identical
+- **Severity:** N/A (positive confirmation)
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** Zero-context diff of `CANON_REGISTRY.md` between `31b36ee3` and `cedeb584` contains exactly six hunks summing to +44/−4. The four removed lines are precisely the declared replacements: (1) the §3 stub note ("*Populated for locations with existing prose/canon description…STUB…*" → completion note); (2) the §4 stub note ("*STUB — …only three named skills exist*" → completion note); (3) the §4 effects-grammar-extension row ("not yet in OPEN_QUESTIONS.md as of this registry's build" — factually retired by this turn's own Q-17/Q-18 minting; replacement cites `OPEN_QUESTIONS.md` Q-17/Q-18, status `UNDECIDED (Q-17 / Q-18)`); (4) the §4 monster-design row ("zero visual spec exists anywhere in the repo at any status" — became false when ③'s gate-passed spec landed; replacement re-scopes the claim to "at this registry's CYCLE-0001 build" and adds a record-only CYCLE-0002 update citing PART II as DRAFT PROPOSAL, status still UNDECIDED). The +44 are the CYCLE-0002 build note (+2), the two replacement notes (+2), 19 §3 lines (9 main-table rows + the 4-row dead-world minor registry with headers + the 1.0/4.0/6.0/7.0 silence note), 20 §4 lines (2 replacement rows + 2 system-adjacent rows + the 10-row ability inventory with headers + the staff-silence note), and cross-cutting note 5 (+1). Byte-compare of everything else: §5/§6 hash-identical, §7 hash-identical, §2's "Registry cards" row byte-identical (base line 97 = new line 99, sha1-equal) — deviation (c) verified exactly as declared, with the staleness honestly recorded in note 5 and the handoff and queued as a mechanical-fix candidate rather than fixed out-of-scope.
+- **Governing source:** ④'s declared shape table (handoff manifest); TASK-0019 scope (`TASK_QUEUE.md`); Handbook §21 (registries record, never adjudicate).
+- **Consequence:** None — no pre-existing entry, status, pointer, or note was altered outside the four declared cells.
+- **Owner role:** N/A.
+- **Recommended action:** None required.
+- **Status:** RESOLVED (verified this gate).
+
+### QA-233 — THE RAZOR verified: 13 compiled rows resolve in their cited sources; 4 silence claims verified TRUE by absence; DRAFT-PROPOSAL labeling airtight; T2 seals respected; nothing UNDECIDED resolved
+- **Severity:** N/A (positive confirmation)
+- **Confidence:** HIGH
+- **Type:** canon / repository
+- **Evidence:** **(a) Compiled rows (13 spot-checked, §3 and §4 both covered):** market/fish street ("corner of the fish street," "It seemed rude not to," "TWO HUNDRED YEARS OF THE GRAND CHORUS" — all verbatim in Ch.1); tram depot alley ("sat in the alley behind the tram depot," "the color of a low fire" in Ch.1; the prologue arrival sentence verbatim; script P32 confirmed "City street. Night rain. Lantern."); harbor & clocktower (both quotes verbatim in Ch.1); three bell towers (quarter-tone passage verbatim in Ch.1:145 modulo dropped markdown emphasis; "restricted tower-survey folios" and "even filed" confirmed); Han's dorm room (both quotes verbatim); 8.0 component plates ("Rust drifted off the scaffold like red snow," "boots hanging over forty meters of nothing" verbatim in prologue; chalk-colors and never-legible law confirmed in Ch.1 + MPB); dead-world minor rows (keepsake passage Ch.1:107–109; MPB §3–4 dead-world details line-confirmed; "the wave coming across the gate-district" verbatim); §4 Han internals (MPB "84 years of service, seventeen wars," "god dead, collateral remains"; story_bible Core Rule #3 carry-over law; `CONTINUITY_LEDGER.md` "no legacy burns yet" — all confirmed); Si-woo sword-Etude (both Ch.1 quotes verbatim; "adequate" confirmed in Ch.1 and MPB §7); Ha-eun (melody passage Ch.1:165–169 incl. "There was nowhere older."; "Haven't we met, senior?" verbatim in the cited story_bible Cast row); Cha residue (Character_Bible "plants weight before any action" and "wrench callus" confirmed); Moderators (MPB "rollback combat — undo last ~3s; they CONTAIN rather than kill: planted oddity" and "Moderator fights are irreversibility puzzles" verbatim); Remnant-economy row (MPB §4 faction sentence + Q-06 "deliberately unformalized" confirmed); Effects_Bible "enemies = loud" confirmed. §3 mirrors the `Environment_Bible.md` gap list item-for-item (all 8 gap-list bullets have rows; library annex covered by a pre-existing row). **(b) Silence claims verified by absence (grep of all canon sources):** (1) Si-woo has NO named skill — TRUE (zero skill-name hits; his canon is unnamed sword-Etude casting only); (2) named-skill count is EXACTLY three, all Han's — TRUE (MPB §8+ "Named skills:" lists exactly Cloudpiercer Third Form "Asking the Sky" · Collateral Claim · Ashfall Protocol: FINAL ROUND; story_bible lists the same three as grammar examples; a full 【…】-token census finds no fourth named skill — 【Changelog (Unique)】 is the unique passive the registry records separately, 【Remnant Echo: ██████ Howl】 is a corrupted-display example); (3) dead worlds 1.0/4.0/6.0/7.0 have NO located places — TRUE (MPB dead-world details give 4.0/6.0/7.0 object-level echoes only — sternum brand, implant, "A key to a house that never existed"; 1.0 is "??? (FOG — sealed)"; no place name exists for any of the four anywhere); (4) Im Dan-bi/Baek Do-yun/minor cast have no canon powers — TRUE (MPB §7 records professions and demeanor only; no ability is attributed anywhere; see QA-238 for the separate Im identity/gender conflict, which the registry correctly did NOT touch). **(c) Label discipline:** all 9 registry lines citing `Trailer_v2_Gap_Specs_DRAFT.md` (build note, §3 note, 4 §3 rows, dead-world row, 2 §4 rows, note 5) carry "DRAFT PROPOSAL"/"PROPOSED, not canon" inline; OQ-VIS references are attributed as ③'s file-local proposal numbers. **(d) T2-seal discipline:** Ha-eun's meaning `PRIVATE_SEALED (T2)` "recorded, not inferred"; bell-tower tuning origin "sealed-adjacent (T2)"; why-patches-leak-now "sealed open mystery"; zero inference toward the (off-repo) twist bank anywhere in the +44. **(e) No UNDECIDED item resolved:** every UNDECIDED status in the touched sections remains UNDECIDED (Q-06, Q-17/Q-18, monster spec, Renewal visuals, dead-world visuals, 2.0 palette "awaits Owner"); no PENDING decision referenced as decided.
+- **Governing source:** `manuscript/chapters/00_prologue.md` / `01_the_ninth_world.md`; `manuscript/bible/story_bible.md`; `manuscript/manhwa/ep1_v3_script.md`; `studio/01_Lore/Master_Project_Bible.md`; `studio/02_Art/Environment_Bible.md` / `Effects_Bible.md` / `Character_Bible.md`; `studio/06_Operations/CONTINUITY_LEDGER.md` / `OPEN_QUESTIONS.md`; the TASK-0019 razor clause.
+- **Consequence:** None blocking — three trivial quote-form nits found during (a) are logged as QA-239 (S4).
+- **Owner role:** N/A.
+- **Recommended action:** None required beyond QA-239's ride-along.
+- **Status:** RESOLVED (verified this gate).
+
+### QA-234 — OPEN_QUESTIONS verified: pure byte-append of exactly the four QA-09 items; collision check independently reproduced; OQ-VIS-1…12 not absorbed
+- **Severity:** N/A (positive confirmation)
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** The base file's 2,354 bytes are an exact byte-prefix of the new 2,618-byte blob (sha1 of prefix = sha1 of base); the appended tail is exactly 4 lines. Mapping verified against `REVIEWS/CYCLE-0001_REVIEW.md` QA-09, which names precisely: CM-01, SW-01, and the two KF-plan effects-grammar extension questions (FX-PATCH-on-character/KF-04, FX-ETUDE-FAIL/KF-06) — the four appended rows are Q-15 (CM-01) · Q-16 (SW-01) · Q-17 (KF-04) · Q-18 (KF-06), in that order, each pointer-not-copy (citing `CANON_REGISTRY.md` / `Trailer_v2_KF_Production_Plan.md` / `REVIEWS/CYCLE-0001_REVIEW.md` for substance), exactly per QA-09's own recommendation. Collision check independently reproduced: base `OPEN_QUESTIONS.md` ends at Q-14; a tree-wide grep at `31b36ee3` finds no minted Q-number ≥ Q-15 — every match is a reservation of this numbering lane (③'s spec header, `CYCLE-0002-VISUAL.md`, `CYCLE-0002-EP.md` "next free numbers Q-15+", ⑤'s GATE-VISUAL, the TASK-0019 queue row). Q-15–Q-18 minted contiguously, no skips. `OPEN_QUESTIONS.md` at HEAD contains zero OQ-VIS tokens — ③'s twelve file-local proposal numbers were not absorbed, renumbered, or officialized (correctly left to ① at cycle close).
+- **Governing source:** `REVIEWS/CYCLE-0001_REVIEW.md` QA-09; the TASK-0019 lane exception ("Q-numbering from Q-15; check collisions"); ③'s `HANDOFFS/CYCLE-0002-VISUAL.md` numbering reservation.
+- **Consequence:** None — Q-01…Q-14 byte-identical; the two parallel unresolved-item ledgers QA-09 flagged are now cross-linked.
+- **Owner role:** N/A.
+- **Recommended action:** None required.
+- **Status:** RESOLVED (verified this gate).
+
+### QA-235 — INDEX refresh accuracy confirmed: all 14 added rows point at real files; all 13 corrective updates match repo reality; no restructure
+- **Severity:** N/A (positive confirmation)
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** All 14 added rows verified against HEAD's tree — every claimed path exists (`Trailer_v2_Gap_Specs_DRAFT.md`; handoffs `CYCLE-0001-QA`/`OPS-0001-EP`/`OPS-0002-REPO`/`CYCLE-0002-EP`/`-LORE`/`-VISUAL`/`-REPO`; `REVIEWS/CYCLE-0001_REVIEW.md`, `OPS-0002_GATE-REPO.md`, `CYCLE-0002_GATE-LORE.md`, `CYCLE-0002_GATE-VISUAL.md`; `WORK_IN_PROGRESS/ep2_outline_proposal.md`; `REFERENCES/PMU_style/INDEX.md`). Corrective updates spot-checked (7 of 13): as-of pointer now `31b36ee39044c8d545a588443add7137c6d404d9` (the declared refresh base — correct under deviation (b)); Handbook row's "v2.1 / Amendment 2" matches the actual file ("## v2.1 — Five-Department Studio Model" line 2; "# AMENDMENT 2 — QA GATES (binding; DEC-0013…)" line 57); DEC range →0015 with 0008/0009/0015 PENDING matches `DECISION_LOG.md` (DEC-0015 present, PENDING); Q range →Q-18 matches the appended ledger; TASK rows →TASK-0020 matches `TASK_QUEUE.md` (TASK-0020 row exists); CANON_REGISTRY row's "seven sections incl. §7 (added by OPS-0002)" matches the registry at HEAD; REVIEWS-directory row no longer claims empty (4 review files exist); the `ep1_adaptation_variance.md` row's IN_REVIEW→ACCEPTED is correctly COMPILED from the authoritative status (`TASK_QUEUE.md` TASK-0008 = "ACCEPTED (⑤ gate-verified CYCLE-0002)"; CHANGELOG records the transition) — see QA-240 for the stale header in ②'s file itself, which is not a ④ defect. The gap-specs row carries "DRAFT PROPOSAL (NOT LOCKED, NOT CANON; nothing in it authorizes generation)". Deviation (b) — the `CYCLE-0002-REPO.md` row listing the handoff one commit early (same-turn self-listing, CYCLE-0001 precedent) — verified as declared: the file lands in the immediately-following commit of the same turn. Structure preserved: same area grouping, same column set, rows added in place; the only heading change retires a stale "this turn" marker.
+- **Governing source:** HEAD tree; `00_OPERATING_HANDBOOK.md`; `DECISION_LOG.md`; `TASK_QUEUE.md`; `OPEN_QUESTIONS.md`; `CHANGELOG.md`; CYCLE-0001 INDEX precedent.
+- **Consequence:** None — the navigation record is accurate at HEAD.
+- **Owner role:** N/A.
+- **Recommended action:** None required.
+- **Status:** RESOLVED (verified this gate).
+
+### QA-236 — Zero Drive-id/link leakage in all four changed files
+- **Severity:** N/A (positive confirmation)
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** Token-level scan of the exact HEAD bytes of all four files: zero `drive.google.com` / `docs.google.com` / `drive.usercontent` strings; zero Drive-id-shaped tokens (every `[A-Za-z0-9_-]{20,}` match extracted and reviewed — all are filenames, 40-hex git SHAs (`31b36ee3…`, `5284fdd1…` in a pre-existing CYCLE-0001 anchor row and build note, blob ids in the handoff manifest), QA/Q/TASK identifiers, or the pre-existing platform document id `cmrr0f9vr0bg907ade7vvxsnd` carried unchanged from the base INDEX off-repo bullet — a platform id, not a Drive id, present since CYCLE-0001). DEC-0015 containment honored. (This review likewise contains no Drive ids or links.)
+- **Governing source:** DEC-0015 containment posture; OPS-0002 gate precedent (QA-214 scan standard).
+- **Consequence:** None.
+- **Owner role:** N/A.
+- **Recommended action:** None required.
+- **Status:** RESOLVED (verified this gate).
+
+### QA-237 — Handoff complete and accurate: manifest matches ⑤'s independently derived lists in full; lane exception and all four deviations declared plainly
+- **Severity:** N/A (positive confirmation)
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** `HANDOFFS/CYCLE-0002-REPO.md` manifest vs ⑤'s derivation: commit SHA, sole-parent claim, all three blob SHA-1s, and all three diff shapes match exactly, including the claim that the registry's 4 removed lines are exactly the four declared cells (opcode-confirmed, QA-232) and that INDEX's −13 are corrective replacements (QA-235). Its content accounting is arithmetically true against the diff: "nine rows added" to §3 (✓), dead-world minor registry + explicit 1.0/4.0/6.0/7.0 silence statement (✓), §4 "two system-adjacent rows" + "10 rows + a staff-silence note" inventory (✓ — 10 ability rows counted), 14 INDEX rows + 13 corrective updates itemized (✓). The lane exception (§4 of the handoff) and deviations (a) two commits, (b) INDEX same-turn self-listing, (c) §2 registry-cards row left byte-identical, plus the label-discipline double-check and the Professor-Im flag (deviation item 5 — correctly NOT recorded in the registry, outside stub scope, no Q-number minted) are all declared in a dedicated section, plainly. The filled-vs-gap-marked account matches the actual registry diff: everything listed as gap-marked is indeed recorded as documented gap/UNDECIDED/sealed in the rows, and nothing listed as "filled" exceeds compiled canon. One S4-level characterization nit inside deviation item 5 is logged as QA-241.
+- **Governing source:** the handoff itself vs the git object store; TURN_HANDOFF_TEMPLATE conventions.
+- **Consequence:** None — ⑤ and ① are fully equipped.
+- **Owner role:** N/A.
+- **Recommended action:** None required beyond QA-241's ride-along.
+- **Status:** RESOLVED (verified this gate).
+
+### QA-238 — "Professor Im" gender/identity conflict across canon-lane sources — VERIFIED REAL (flagged by ④, adjudicated and registered by this gate)
+- **Severity:** **S2 MAJOR** (continuity defect across locked-lane sources; escalates to S1 BLOCKER for Ch.2/EP.2 drafting or any Im visual generation if unresolved by then)
+- **Confidence:** HIGH (that the textual conflict exists); the correct resolution is genuinely open
+- **Type:** canon / continuity
+- **Evidence:** Independently re-fetched at HEAD. `manuscript/chapters/01_the_ninth_world.md`, library scene — line 159: `"Ask Professor Im," he said, standing, gathering his notes.` → line 161: `"I did. She gave me the Chorus catechism and a biscuit."` (Ha-eun; the "She" can only be the Professor Im she asked — Ch.1's Professor Im is a woman on this reading). Versus `studio/02_Art/Character_Bible.md` CHAR-005: `## CHAR-005 · PROCTOR/PROF. IM DAN-BI` — `Design lock 0f602652…. ~40s male; BLACK hair greying at temples (**never blonde**); thin rectangular glasses low on nose; dark-grey instructor coat; clipboard + rubber stamp.` Ancillary evidence for ②: `Master_Project_Bible.md` §7 — "IM DAN-BI — ~40s combat-theory professor/proctor; weary ritual kindness (48 stamped failures, zero reports); Ch.3 first-death CANDIDATE (undecided)" (no gendered pronoun); `story_bible.md` Cast — "Professor Im Dan-bi — Combat Theory professor; protects his scholarship; kind. (Introduce Ch.2. …)" (pronoun antecedent ambiguous — Im himself, which genders him male, or the failing student whose scholarship Im's zero-reports kindness protects; see QA-241); `story_bible.md` asset list — "proctor Im Dan-bi 0f602652-… (BLACK greying hair, glasses — never blonde)"; Ch.1 line 15 — Si-woo: "Master Im says bones don't lie" (a possibly-distinct third reference). Materially relevant: Ch.1's "Professor Im" is invoked twice on **Chorus/mana theory** ("Professor Im says mana has always sung and always will, one Chorus, one pitch" — Ch.1:145), while CHAR-005/MPB's Im Dan-bi is a **combat-theory** professor/proctor slated to be introduced on-page in Ch.2 — Ch.1's Im appears in dialogue only. **Two resolution paths, deliberately not resolved here:** (1) two distinct Professor Ims (surname collision is naturalistic; the theory-professor Im would then be a new undesigned minor character needing an eventual registry row and, if she appears on-page, a design); (2) one character → a hard locked-lane contradiction between prose canon ("She") and the locked design record ("~40s male") requiring ② investigation and an Owner ruling on which source wins, then a correction through the owning lane (DEC-0008-sensitive; archive-don't-delete). ⑤ does not adjudicate which reading wins (Handbook §8.5) and minted no Q-number (①'s call — Q-19 is the next free number). ④'s handling this turn was CORRECT: flagged with both pointers, no registry §1 write (outside stub scope), no lock, no inference.
+- **Governing source:** `manuscript/chapters/01_the_ninth_world.md` (prose canon) vs `studio/02_Art/Character_Bible.md` CHAR-005 (locked design record); Handbook §21 severity scale (S1 = canon contradiction; registered S2 while the same-person premise is unconfirmed); DEC-0008 (no canon edit without ruling).
+- **Consequence:** If unresolved when ② drafts Ch.2/EP.2 (Im Dan-bi's introduction and warmth beat; Ha-eun's library scene is EP.2's headline content per the variance record) or when ③ generates any Im Dan-bi visual, the wrong reading can get baked into published prose/assets — at that point this becomes S1 and blocks.
+- **Owner role:** ① (mint the open question at cycle close; route it); ② (investigate on a lore turn; recommend a reading); Owner (rule, if same-person is confirmed); ④ (record as a §1 CONFLICT-FOR-QA row, e.g. IM-01, on its next authorized registry pass).
+- **Recommended action:** ① mints Q-19 "Professor Im identity/gender: Ch.1 'She' vs CHAR-005 '~40s male' — one Im or two?" citing this finding; ② investigation queued BEFORE TASK-0005/EP.2 drafting; no edit to Ch.1 or Character_Bible until ruled. **Recorded in this review only:** `CONTINUITY_LEDGER.md` was read first per house convention and deliberately NOT appended — its Handbook §20 format is per-scene/episode state-transition entries (the file is a baseline-state snapshot whose "Open threads" line lists in-story threads), with no open-conflicts register; the house-designated homes for a doc-vs-doc source conflict are OPEN_QUESTIONS (①'s mint) and the registry's CONFLICT-FOR-QA pattern (④'s lane), so this finding is carried here rather than format-stretching ⑤'s ledger.
+- **Status:** OPEN (routed to ① at cycle close).
+
+### QA-239 — Quote-fidelity nits in three registry cells: paraphrase-grade wording presented inside quotation marks
+- **Severity:** S4 POLISH
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** (1) §3 dead-world row (the tower, 3.0): registry quotes "once a promise between apprentices"; Ch.1:109 reads "…had once **been** a promise between apprentices." (2) §3 dead-world row (the mountain, 2.0): registry quotes "a man who could cut rain"; Ch.1:107 reads "**The** man who could cut rain." (MPB has Cheon Mun-baek "who could cut rain" — the shared fragment is verbatim). (3) §4 Cha row: the quoted sentence "the patch failed to rewrite how she salts broth" is verbatim canon — but from `story_bible.md` Cast ("The patch failed to rewrite how she salts broth."), which is not among that row's four cited pointers; the row's cited Ch.1 wording is "It had not managed to rewrite the way she salted broth." Zero semantic drift in all three; the registry charter permits "quotation or close paraphrase," but quotation marks imply verbatim.
+- **Governing source:** the registry's own charter line ("Every fact below is a quotation or close paraphrase carrying a source pointer"); cited sources at HEAD.
+- **Consequence:** Negligible — a future reader diffing quotes against sources loses a few seconds; no fact is wrong.
+- **Owner role:** ④.
+- **Recommended action:** On the next authorized ④ registry pass (the same pass already queued for the §2 registry-cards staleness): normalize the three cells — bracket/ellipsize the two trimmed quotes, and either add the `story_bible.md` Cast pointer to the Cha row or requote from Ch.1. No dedicated turn.
+- **Status:** OPEN (queued, ride-along).
+
+### QA-240 — [Out of gate scope; adjacent observation] `ep1_adaptation_variance.md` header stale: still "RECORD — IN REVIEW (⑤ QA to verify in this cycle)" though the record is ACCEPTED
+- **Severity:** S3 MINOR (status-label drift on a record file; not a ④ defect — found while verifying ④'s INDEX row)
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** `manuscript/manhwa/ep1_adaptation_variance.md` line 3 at HEAD still reads "**RECORD — IN REVIEW (⑤ QA to verify in this cycle)**", but the authoritative status moved in CYCLE-0002: `TASK_QUEUE.md` TASK-0008 = "ACCEPTED (⑤ gate-verified CYCLE-0002)"; `CHANGELOG.md` records the transition at the GATE(②) entry. ④'s INDEX row correctly compiled ACCEPTED from the authoritative ledgers; the file's own banner (②'s lane) was not updated when ② applied the QA-04 wording correction this cycle.
+- **Governing source:** `TASK_QUEUE.md`; `CHANGELOG.md`; QA-10 label-discipline standard.
+- **Consequence:** A reader trusting the file banner believes verification is still pending; two status surfaces disagree (the exact drift class QA-12 flagged for STATUS pointers).
+- **Owner role:** ② (file owner); ① (routing).
+- **Recommended action:** One-line banner update ("RECORD — ACCEPTED (⑤ gate-verified CYCLE-0002)") on ②'s next authorized touch of the file. No dedicated turn.
+- **Status:** OPEN (queued to ①/②).
+
+### QA-241 — Handoff deviation item 5 characterizes story_bible as "stat[ing] no gender" for Im Dan-bi; the actual line is pronoun-ambiguous
+- **Severity:** S4 POLISH
+- **Confidence:** HIGH
+- **Type:** repository
+- **Evidence:** ④'s handoff (deviation item 5) states "(Master_Project_Bible §7 and story_bible.md state no gender)". MPB §7: correct — no gendered pronoun. `story_bible.md` Cast line, however, reads "Professor Im Dan-bi — Combat Theory professor; protects **his** scholarship; kind." — "his" either genders Im male (consistent with CHAR-005) or refers to the student whose scholarship Im protects (per MPB's "48 stamped failures, zero reports" gloss), in which case ④'s reading holds. Ambiguous is not the same as silent; the sentence is direct evidence for the QA-238 investigation and should not be pre-filtered out of it.
+- **Governing source:** `manuscript/bible/story_bible.md` Cast; the razor's silences-documented-precisely standard.
+- **Consequence:** Negligible for this turn (the flag pointed at the right sources regardless); mildly material to QA-238's evidence file, where the ambiguity is now recorded (see QA-238).
+- **Owner role:** ② (as part of the QA-238 investigation).
+- **Recommended action:** None for ④; QA-238's evidence list supersedes the parenthetical. Recorded so the investigation starts from the full pronoun picture.
+- **Status:** OPEN (subsumed into QA-238's routing).
+
+## Severity reference (verbatim from Handbook §8.5/§21)
+- `S0 CRITICAL` — secret exposure, repository corruption, destructive history rewrite, or severe safety issue. Stop pipeline.
+- `S1 BLOCKER` — canon contradiction, broken locked asset, failed production gate, or unusable output. No downstream work.
+- `S2 MAJOR` — continuity or production defect that materially harms story/readability/consistency.
+- `S3 MINOR` — localized issue with low downstream impact.
+- `S4 POLISH` — optional clarity or style improvement.
+
+## Protected zones (do not silently fix — per Handbook §21)
+Canon bibles · prose and dialogue · approved adaptation scripts · locked asset facts · creator approvals · private/sealed information. This review made no edit to any file in these zones, or to any ④ file, or to any file outside ⑤'s own lane (this review file is the commit's only content; `CONTINUITY_LEDGER.md` was read, not written — rationale in QA-238).
+
+## Summary
+
+- **Findings by severity:** S0 — 0 · S1 — 0 · S2 — 1 (QA-238, a canon-source conflict registered THROUGH this gate; not a defect of ④'s turn, which flagged it correctly) · S3 — 1 (QA-240, ②'s file, out-of-scope observation) · S4 — 2 (QA-239, QA-241) · N/A (positive confirmations) — 8 (QA-230 through QA-237).
+- **Findings by confidence:** HIGH — 12 (all). Disclosed partial scope: razor citation checks sampled 13 rows and 4 silence claims (every row class and both sections); unsampled citations are UNVERIFIED, not confirmed wrong.
+- **Lane-compliance verdict:** both commits — **COMPLIANT.** Exactly the declared 3-file + 1-file manifest; `[④-REPO] ` prefixes; descriptive messages; zero binaries; the single ops-file write is the task-authorized, append-only `OPEN_QUESTIONS.md` exception; all four pre-declared deviations verified against the dispatch and honored in the tree.
+- **Blob verification result:** all four delivered blobs recompute byte-exactly from raw bytes to ④'s claimed SHAs (`d0323b8d…` / `677669fb…` / `1efc9529…` / `5a0da117…`); GitHub's independently reported registry blob SHA matches; base bytes of `OPEN_QUESTIONS.md` are an exact prefix of the new blob. **Losslessness: TRUE.**
+- **QA ledger:** now stands at **QA-241**.
+- **Recommended next steps for ① / Owner:** (1) No blocking action; ④ is cleared and cycle-close mechanics may proceed. (2) **Mint Q-19 for QA-238 (Professor Im)** and queue ② investigation ahead of any Ch.2/EP.2 drafting or Im visual work — this is the one item ① should put in front of the Owner at cycle close (as a routed question, not a ruling request yet). (3) QA-239 + the already-queued §2 registry-cards staleness ride along on ④'s next registry pass. (4) QA-240 rides along on ②'s next touch of the variance record. (5) Standing Owner backlog unchanged: DEC-0008 [P0], DEC-0009, DEC-0015, CM-01 (now Q-15), Q-02, Q-14, OQ-VIS-1…12 formalization.
+
+## VERDICT
+
+# PASS-WITH-FINDINGS
+
+**Verdict: PASS-WITH-FINDINGS**
+
+**Rationale:** No defect attributable to ④'s turn rises above S4 POLISH. The commit chain is exactly as declared (two `[④-REPO] ` commits on base `31b36ee3…`, nothing interleaved, HEAD = the handoff commit). The shape is byte-true: 3 modified files + 1 added file matching the claimed numstats, zero binaries, all four blob SHAs recomputed from raw bytes and equal to the claims. Registry edit discipline is opcode-clean — the four removed lines are exactly the four declared in-place replacements, §2/§5/§6/§7 and every other pre-existing line byte-identical. THE RAZOR holds under sampling: 13 compiled rows resolve in their cited sources (three S4 quote-form nits), all four sampled silence claims are TRUE by absence, every ③-spec citation carries DRAFT PROPOSAL/PROPOSED inline, T2 seals are respected with zero inference, and nothing UNDECIDED was resolved. The OPEN_QUESTIONS write is a pure byte-append of exactly the four QA-09 items with the collision check independently reproduced; OQ-VIS numbering was not absorbed. The INDEX refresh is accurate against repo reality in all sampled rows and corrective updates, with no restructure. The leak scan is clean (zero Drive ids/links; DEC-0015 containment honored). The handoff manifest matches ⑤'s independent derivation in full and declares the lane exception and all deviations plainly — including correctly flagging, without acting on, the Professor-Im observation. The verdict carries "WITH-FINDINGS" because this gate also **registers QA-238 (S2)**: the Professor-Im gender/identity conflict between Ch.1 and Character_Bible CHAR-005 is verified real against exact quoted bytes and needs ①'s routing (Q-19), ②'s investigation, and possibly an Owner ruling — upstream of ④'s turn and unblocked by it, but too material to leave outside the verdict line.
+
+**Non-blocking findings queued:** QA-238 (S2 — Professor Im conflict, routed to ①/②/Owner) · QA-239 (S4 — three quote-fidelity cells, ④ ride-along) · QA-240 (S3 — stale variance-record banner, ②'s file) · QA-241 (S4 — handoff's "no gender" parenthetical vs the ambiguous story_bible pronoun).
+
+**Gate disposition:** ④ is cleared; TASK-0019's deliverables stand as committed; no rework returns to ④. CYCLE-0002 continues → ① cycle close, per DEC-0013.
+
+*This review adds `studio/06_Operations/REVIEWS/CYCLE-0002_GATE-REPO.md` and touches nothing else. No department file edited; no UNDECIDED item resolved; no Q-number minted; no Drive ids or links reproduced.*

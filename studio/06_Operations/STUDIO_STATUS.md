@@ -2,14 +2,14 @@
 schema_version: 1
 studio_state: ACTIVE-FLEET
 run_id: CYCLE-0005
-run_status: OPEN (TASK-0029 delivered; review phase: TASK-0030 QA review in flight)
-current_department: Quality Assurance Agent (TASK-0030 review of TASK-0029)
+run_status: CYCLE-0005 CLOSED - STANDING BY FOR OWNER (11 rulings + lane-map adoption queued; no night-legal, non-Owner-gated work remains)
+current_department: none in flight (fleet standing by; next dispatch on Owner ruling or new evidence)
 lease_owner: Executive Producer Agent (thread cmrrwy1rc1fli07adf2ba88dt)
 lease_started_utc: 2026-07-19T14:57:00Z
 lease_expires_utc: null
-base_remote_commit: 575bd675ea55111a823cd3787a65d09034952be5
+base_remote_commit: 27aaf104d5773087368f29ebfc954c7f60fd4377
 last_verified_commit: 468c328e40c390b819bb1b0d93eb734690b8520a
-active_task_ids: [TASK-0017, TASK-0029, TASK-0030]
+active_task_ids: [TASK-0017]
 blocking_decision_ids: [DEC-0008]
 next_live_run_not_before_utc: null
 ---
@@ -20,9 +20,9 @@ next_live_run_not_before_utc: null
 - **CYCLE-0003 CLOSED (TASK-0025, this dispatch):** deferred ②/④/⑤ CHANGELOG entries written + TASK-0023/0024 cells closed (6137592a); Handbook Amendment 4 + QA-246 subtitle/version-note fix (b1ca7220, insertion-only, byte-verified); close-out handoff + Owner report at HANDOFFS/CYCLE-0003-CLOSE.md (e4dd310e).
 - **TASK-0026 DONE:** Owner Decision Portfolio delivered (d4f7a545) -> `WORK_IN_PROGRESS/owner_decision_portfolio_DRAFT.md`; all 11 rulings WAITING_FOR_CREATOR (one-sitting decision pack).
 - **CYCLE-0004 CLOSED (fleet review, both verdicts in, zero S0/S1):** TASK-0028 Technical QA PASS-WITH-FINDINGS (97d31068; TQA-001 S3 + TQA-002 S4 queued) - TASK-0027 Quality Assurance PASS-WITH-FINDINGS (c94f5531; QA-248 + QA-249, both S4, queued). Fleet-cycle-1 close-out + Owner Decision Portfolio stand VERIFIED. Ride-along reconciliations recorded: TASK-0004 -> BLOCKED (application gated on Owner approval + TASK-0001/DEC-0008), TASK-0015 -> DONE (CYCLE-0001-verified).
-- **CYCLE-0005: TASK-0029 DELIVERED** (6e8e0620 map + 575bd675 handoff): 27/27 department contracts read (OS repo ref 7aa331f0, zero fetch failures); 15 proposed standing lanes / 12 no-production-write-lane; rules of the road R1-R9; 8 file-local OQ-IA-1..8 open items (options only, nothing resolved; no Q-numbers minted). **Review phase: TASK-0030** (Quality Assurance Agent) in flight over both commits; adoption stays Owner-gated (future Handbook amendment) after review.
+- **CYCLE-0005 CLOSED:** TASK-0029 fleet write-lane map delivered (6e8e0620 + 575bd675) and QA-verified PASS-WITH-FINDINGS (TASK-0030, 27aaf104; zero S0/S1; 80/80 citations resolve; QA-250/QA-251 S4 wording nits queued). **Map -> WAITING_FOR_CREATOR:** adoption via a future Handbook amendment is the Owner's call; QA-249 (stale retained-v1 divider) can ride that same authorized Handbook touch.
 - **Q-19 (Professor Im):** unchanged - options report decision-ready (`WORK_IN_PROGRESS/professor_im_investigation_DRAFT.md`); ruling remains the Owner's; no EP.2 drafting or Im visuals before it.
-- **Owner rulings pending (11):** DEC-0008 [P0] - TASK-0003 destination - DEC-0009 - Q-15/CM-01 - Q-02 keepsake - Q-14 poster timing - Q-19 (options ready) - Q-20 - Q-21 - Q-22 - TASK-0018 lock review. Consolidated decision-ready portfolio: `WORK_IN_PROGRESS/owner_decision_portfolio_DRAFT.md` (TASK-0026, delivered d4f7a545).
+- **Owner rulings pending (11 + lane-map adoption):** DEC-0008 [P0] - TASK-0003 destination - DEC-0009 - Q-15/CM-01 - Q-02 keepsake - Q-14 poster timing - Q-19 (options ready) - Q-20 - Q-21 - Q-22 - TASK-0018 lock review. Consolidated decision-ready portfolio: `WORK_IN_PROGRESS/owner_decision_portfolio_DRAFT.md` (TASK-0026, delivered d4f7a545). PLUS: fleet write-lane map adoption (TASK-0029, QA-verified) -> `WORK_IN_PROGRESS/fleet_write_lane_map_DRAFT.md`.
 - **Night rules remain in force** (Amendment 3 carries A2.4): additive DRAFT only; no LOCKs, canon retcons, or repository restructures; all Owner decisions queued, never made. DEC-0008 PENDING -> canon-rewrite block in force.
 - **Repository:** github.com/lycacallenero55-cpu/patch-10.0 - branch `main` - no branch protection.
-- **Last major update:** [AGENT:Executive Producer] TASK-0029 delivery recorded (map 6e8e0620 + handoff 575bd675, IN_REVIEW); TASK-0030 QA review minted + dispatched. Per QA-12, base = 575bd675 (TASK-0029 handoff HEAD this turn built against).
+- **Last major update:** [AGENT:Executive Producer] CYCLE-0005 closed (TASK-0030 PASS-WITH-FINDINGS 27aaf104 recorded; lane map -> WAITING_FOR_CREATOR); studio STANDING BY FOR OWNER. Per QA-12, base = 27aaf104 (TASK-0030 review HEAD this turn built against).

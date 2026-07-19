@@ -65,3 +65,8 @@
 - Night Shift standing order recorded (DEC-0014, Amendment 2 §A2.4): unattended run every 3 hours continuing the production thread, ONE gated cycle per run; night rules = additive DRAFT-only, no LOCKs / canon retcons / repository restructures; Owner-approval items queued, never decided; double-FAIL stops with a report; every run ends with a STATUS update + Owner cycle report. Platform schedule activation pending the Creator's agent-config save (and the schedule's unattended-integration-writes toggle).
 - DEC-0013 + DEC-0014 appended to DECISION_LOG.md. STUDIO_STATUS refreshed to a compact live-state form (detailed CYCLE-0001 history remains in CHANGELOG + REVIEWS per the single-source rule); HEAD pointers follow the QA-12 convention. HANDOFFS/OPS-0001-EP.md added.
 - No canon, art, adaptation, or asset-lock content was modified.
+## CYCLE-0002 ① — 2026-07-19 — Gated cycle opened (night rules)
+- CYCLE-0002 opened in Conductor Mode with QA gates (Amendment 2), Owner-ordered; NIGHT RULES in force (§A2.4): additive DRAFT only, no LOCKs/retcons/restructures, Owner decisions queued.
+- Assignments: ② TASK-0008 QA-04 correction + TASK-0017 EP.2 outline proposal · ③ TASK-0018 trailer gap specs DRAFT · ④ TASK-0019 registry completion + OPEN_QUESTIONS cross-links + INDEX refresh · ⑤ gates after each department (REVIEWS/CYCLE-0002_GATE-<dept>.md).
+- Severity scale standardized to S0–S4 per QA_REVIEW_TEMPLATE (adopts QA-11).
+- No canon, art, adaptation, or asset-lock content was modified.

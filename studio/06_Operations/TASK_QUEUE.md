@@ -10,7 +10,7 @@ Statuses: PROPOSED · APPROVED · READY · IN_PROGRESS · PARTIAL · BLOCKED · 
 | TASK-0005 | Episode 2 "Last Day" script | PROPOSED | P1 | ② Lore | TASK-0001 | YES (creator approves words) | beats already locked in canon |
 | TASK-0006 | Trailer v2 keyframe batch (16 KFs) | PROPOSED | P1 | ③ Visual | TASK-0003 recommended | YES (per-KF approval) | storyboard exists; KF production plan ready (04_Storyboards/Trailer_v2_KF_Production_Plan.md) |
 | TASK-0007 | Missing kits: Ha-eun/Si-woo/Cha kits, Moderator design, Baek design(post-Ch2) | IN_REVIEW (DRAFT specs in 02_Art/Kit_Specs_DRAFT.md) | P2 | ③ Visual | TASK-0003 recommended | YES (locks) | this cycle: DRAFT specs only, no locks, no generation |
-| TASK-0008 | Adaptation-variance record (prose vs EP1 readers) | IN_REVIEW (⑤ to verify) | P2 | ② Lore (+⑤ verify) | — | no | same-event/compressed/reordered table |
+| TASK-0008 | Adaptation-variance record (prose vs EP1 readers) | IN_REVIEW (⑤ verified-with-corrections — see CYCLE-0001_REVIEW.md QA-04) | P2 | ② Lore (+⑤ verify) | — | no | same-event/compressed/reordered table |
 | TASK-0009 | Ratify shot-length harmonization (4–8s std; <4s = editorial inserts) | WAITING_FOR_CREATOR | P3 | ③ Visual | — | YES (DEC-0009) | applied provisionally in Video_Workflow |
 | TASK-0010 | Part 1 bubble restyle to Part-2 spec | PROPOSED | P3 | ③ Visual | — | YES | creator earlier said "leave as is" — needs re-confirm |
 | TASK-0011 | HyperAgent production skill (creator ordered "create LAST", DEC-0007) | WAITING_FOR_CREATOR | P2 | ① EP | DEC-0011 | YES | five-department architecture now ACTIVE (DEC-0012); do not create skill without explicit go |
@@ -18,4 +18,4 @@ Statuses: PROPOSED · APPROVED · READY · IN_PROGRESS · PARTIAL · BLOCKED · 
 | TASK-0013 | Merge EP.1 Parts 1+2 into one continuous reader | PROPOSED | P3 | ③ Visual | — | YES | nice-to-have |
 | TASK-0014 | 16:9 trailer master export (after v2 vertical cut) | PROPOSED | P3 | ③ Visual | TASK-0006 | no | storyboard notes it |
 | TASK-0015 | Build studio/07_Repository/ layer: CANON_REGISTRY.md, INDEX.md, TEMPLATES/, PROMPT_LIBRARY.md, ARCHIVE/ | IN_REVIEW (layer built; registry DRAFT) | P1 | ④ Repo & Canon Mgmt | DEC-0012 | no (records only; registry recommends, never rules) | new lane per DEC-0012 |
-| TASK-0016 | Cycle-1 QA audit: lane compliance of all CYCLE-0001 commits + continuity/consistency spot audit + doc quality | IN_PROGRESS (CYCLE-0001 ⑤) | P1 | ⑤ QA | ②③④ turns done | no | findings → REVIEWS/, incidents as warranted |
+| TASK-0016 | Cycle-1 QA audit: lane compliance of all CYCLE-0001 commits + continuity/consistency spot audit + doc quality | DONE (CYCLE-0001) | P1 | ⑤ QA | ②③④ turns done | no | findings → REVIEWS/CYCLE-0001_REVIEW.md; verdict PASS-WITH-FINDINGS |

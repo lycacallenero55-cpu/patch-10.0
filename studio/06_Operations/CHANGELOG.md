@@ -95,3 +95,9 @@
 - **⑤ GATE(④/OPS-0002): PASS** (9345a5ef) — pure-insertion verified at byte level; 3/3 Drive spot-audit sha256 match; leak scan clean. Findings QA-210–219 (two S4 polish items queued: QA-218 effective shortlist is 27, QA-219 thumbnail sub-count); QA ledger corrected to stand at QA-219.
 - **③ TASK-0018 first dispatch aborted** mid-run by a platform auth failure (401) with zero commits — recorded as an infra incident, NOT a gate FAIL; re-dispatched this run (first scheduled night-shift tick in the new conductor thread).
 - This reconciliation commit ([①-EP]): TASK-0020 recorded DONE, DEC-0015 queued PENDING, STUDIO_STATUS updated to ③-in-flight.
+## CYCLE-0002 close — 2026-07-19 — [①-EP] conductor
+- ③ TASK-0018 delivered (ad1ce4e7: Trailer_v2_Gap_Specs_DRAFT.md + CYCLE-0002-VISUAL handoff) → ⑤ GATE(③) PASS zero-defect (31b36ee3; QA-220–229).
+- ④ TASK-0019 delivered (cedeb584 + 8ae5b112: registry §3/§4 stub completion, Q-15–Q-18, INDEX refresh, CYCLE-0002-REPO handoff) → ⑤ GATE(④) PASS-WITH-FINDINGS (f458becc; QA-230–241).
+- QA-238 (S2) Professor Im identity/gender conflict verified real and registered; minted as Q-19 this commit; routing: Owner ruling / ② investigation before EP.2 drafting or Im visuals.
+- Close ledger this commit: TASK-0018 → GATED-PASS (awaiting Owner per-item lock review); TASK-0019 → ACCEPTED; Q-20/21/22 minted for the three heavyweight visual proposals (OQ-VIS-7/9/11); OQ-VIS-1–6/8/10/12 remain file-local in the DRAFT spec; TASK-0021/0022/0023 added PROPOSED.
+- CYCLE-0002 declared COMPLETE (all four department turns + gates green; conducted across interactive session + night-shift ticks incl. one 401-aborted ③ dispatch, re-run clean). Cycle report: HANDOFFS/CYCLE-0002-CLOSE.md. Next: CYCLE-0003 opens next tick (② + ⑤ gate, one-increment protocol).

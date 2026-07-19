@@ -1,10 +1,10 @@
 ---
 schema_version: 1
-studio_state: CYCLE_IN_PROGRESS
+studio_state: BLOCKED-DRIVE-ACCESS
 run_id: CYCLE-0002
 run_status: IN_PROGRESS
-current_department: ⑤ GATE(②) PASS → ③-VISUAL next
-lease_owner: ③-Visual (Conductor Mode, QA gates per Amendment 2)
+current_department: HALTED — ④-priority Drive import failed (google-drive not enabled for this agent); loop paused pending Owner ruling
+lease_owner: null (loop halted by Owner protocol)
 lease_started_utc: 2026-07-19T06:36:00Z
 lease_expires_utc: null
 base_remote_commit: af7ccf582dbb6cce0c5f91f933f8e0fcaa37de27
@@ -14,6 +14,9 @@ blocking_decision_ids: [DEC-0008]
 next_live_run_not_before_utc: null
 ---
 # Studio Status
+- **⛔ HALT (Owner protocol, 2026-07-19):** The Owner-ordered PMU reference import (Drive folder "pick me up", id 1_EVgpqiHPo8-q3zLHBprJi8Vy6f5IGOf) FAILED — the google-drive integration is NOT enabled for this agent/thread (SearchIntegrations: filteredByRestrictedMode; ConnectIntegration refused). Confirmed twice (④ dispatch + conductor re-verification): config-level, not transient. Zero writes were made by ④; nothing was imported.
+- **Night-shift runs: while studio_state = BLOCKED-DRIVE-ACCESS, do NOT execute cycles.** Sync, confirm the block still stands, and stand down with a one-line note. Only the Owner lifts this state.
+- **Resume point when the Owner rules:** run the ④-priority Drive import first (if Drive gets enabled) → ⑤ gate on it → then CYCLE-0002 continues where it paused: ③-VISUAL (TASK-0018) → ⑤ GATE(③) → ④ (TASK-0019) → ⑤ GATE(④) → ① report.
 - **Model:** FIVE departments (Amendment 1) + QA GATES (Amendment 2). CYCLE-0002 order: ① → ② → ⑤ GATE(②) → ③ → ⑤ GATE(③) → ④ → ⑤ GATE(④) → ① report → Owner.
 - **Current state:** CYCLE-0002 RUNNING (Owner-ordered, Conductor Mode) under **NIGHT RULES** (Amendment 2 §A2.4): additive DRAFT work only; no LOCKs, canon retcons, or repository restructures; all Owner decisions queued, never made. DEC-0008 remains PENDING → canon-rewrite block in force; all assignments scoped legal under it.
 - **CYCLE-0002 assignments:** ② TASK-0008 QA-04 correction + TASK-0017 EP.2 outline proposal (DRAFT, Q-02 stays UNDECIDED) — **both ⑤ GATE(②) PASSED this turn, cleared for handoff** · ③ TASK-0018 trailer gap specs DRAFT (3 environment plates, monster design, registry-card UI) · ④ TASK-0019 registry stub completion + OPEN_QUESTIONS cross-links (QA-09) + INDEX refresh · ⑤ three gates (REVIEWS/CYCLE-0002_GATE-<dept>.md), severity scale S0–S4 per template (QA-11 adopted).

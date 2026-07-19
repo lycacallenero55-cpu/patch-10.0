@@ -1,7 +1,7 @@
 # PATCH 10.0 — Studio Operating Handbook
-## v2.0 — Five-Department Studio Model (Amendment 1 + retained v1 body)
+## v2.1 — Five-Department Studio Model (Amendments 1–2 + retained v1 body)
 
-> **Version note (2026-07-19, CYCLE-0001):** This handbook was adopted in v1 for a single live agent with temporary specialist subagents (DEC-0010). The Creator has since retired that model (DEC-0011) and ordered a five-department studio (DEC-0012). **Amendment 1 below is binding and supersedes the v1 body wherever they conflict.** The complete v1 text is retained after the amendment because most of its law (studio laws, approvals, source-of-truth, domain workflows, QA, anti-patterns) remains in force unchanged.
+> **Version note (2026-07-19, CYCLE-0001):** This handbook was adopted in v1 for a single live agent with temporary specialist subagents (DEC-0010). The Creator has since retired that model (DEC-0011) and ordered a five-department studio (DEC-0012). **Amendments 1 and 2 below are binding and supersede the v1 body wherever they conflict.** The complete v1 text is retained after the amendments because most of its law (studio laws, approvals, source-of-truth, domain workflows, QA, anti-patterns) remains in force unchanged.
 
 ---
 
@@ -54,7 +54,45 @@ One department writes to the repository per turn. The Studio Owner (Creator) adv
 
 ---
 
-# RETAINED v1 TEXT — historical framing; superseded only where Amendment 1 says so
+# AMENDMENT 2 — QA GATES (binding; DEC-0013, 2026-07-19)
+
+## A2.1 Rule
+
+⑤ Quality Assurance is a mandatory quality gate BETWEEN departments, not only an end-of-cycle reviewer. No department's work is treated as accepted — or built upon — until it has passed its gate.
+
+## A2.2 Conducted cycle order (supersedes A1.3's sequence for Conductor Mode)
+
+**① EP (reconciliation + work orders) → ② Lore → ⑤ GATE(②) → ③ Visual Production → ⑤ GATE(③) → ④ Repository & Canon Management → ⑤ GATE(④) → ① final report → Owner.**
+
+- Lane ownership (A1.2) and one-department-writes-per-turn (A1.3/A1.4) are unchanged; each gate is a distinct ⑤ turn.
+- A department with no dispatchable work in a given cycle is skipped together with its gate; the skip is recorded in the cycle report.
+- The ④ gate is the final QA action of a standard gated cycle; ① compiles the cycle report from the gate reviews. A full-cycle audit (CYCLE-0001 style) remains available as an extra ⑤ turn when ① or the Owner orders one.
+
+## A2.3 Gate mechanics
+
+- **Scope:** ONLY the gated department's deliverables from that turn — its commit(s): lane compliance (commit file list vs. A1.2), content verification against canon/spec sources and the laws (v1 §3, 00_STUDIO_RULES §5 micro-rules, SOURCE_OF_TRUTH precedence), label discipline (DRAFT / IN REVIEW / RECORD / etc.), and turn mechanics (A1.4) completed.
+- **Output:** `studio/06_Operations/REVIEWS/CYCLE-<n>_GATE-<dept>.md` using the QA_REVIEW_TEMPLATE finding format. Verdict is exactly one of:
+  - **PASS** — may carry non-blocking findings; these are queued (TASK_QUEUE.md / OPEN_QUESTIONS.md or the owning department's next turn) and never block the cycle.
+  - **FAIL** — one or more blocking findings; each must state evidence and precisely what must change.
+- **Gate turn mechanics:** the gate review file serves as the turn's handoff record; STUDIO_STATUS.md and CHANGELOG.md are still updated (brief entries). Gate commits use the `[⑤-QA]` prefix.
+- **On PASS:** the conductor dispatches the next department.
+- **On FAIL:** the conductor returns the work to the SAME department with ⑤'s findings attached; that department fixes in a new commit on its own turn; the SAME gate then re-runs against the fix.
+- **Two FAILs at the same gate for the same department:** HALT the cycle. ① reports to the Owner with both gate reviews; ⑤ records an INCIDENTS.md entry if the failure meets the incident bar.
+- Gates verify; they never fix. ⑤ writes findings and recommendations only — corrections always go back through the owning department.
+
+## A2.4 Unattended cycles — Night Shift standing order (DEC-0014)
+
+- The Creator may schedule unattended runs (currently: every 3 hours, continuing the production thread) that each execute ONE full gated cycle in Conductor Mode.
+- **Night rules (binding during any unattended run):**
+  1. Additive DRAFT work only — no LOCKing assets, no canon retcons, no repository restructures.
+  2. Anything requiring Owner approval is QUEUED (TASK_QUEUE.md / DECISION_LOG.md as PENDING) — never decided.
+  3. A QA gate failing twice on the same work stops the run with a written report.
+  4. Every run ends by updating STUDIO_STATUS.md and leaving a cycle report for the Owner.
+- All standing blocks remain in force unattended: DEC-0008 gating (until approved), I-0001/TASK-0003 (no generation that depends on non-durable masters), the sealed-twist law, and per-item approval requirements.
+
+---
+
+# RETAINED v1 TEXT — historical framing; superseded only where Amendments 1–2 say so
 
 # PATCH 10.0 — AI Studio Director
 ## Permanent Operating Handbook for a Single Live Agent and Its Temporary Specialist Subagents

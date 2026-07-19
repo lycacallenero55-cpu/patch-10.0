@@ -166,6 +166,16 @@
 
 ---
 
+## 7. Reference Libraries
+
+*Section added 2026-07-19 by ④ under the Owner-priority order OPS-0002 (PMU reference import). This section records reference libraries — curated inspiration corpora. A reference library is never canon, never a drawing source, and never overrides a LOCKED entry; this registry records that such a library exists and where its index lives, nothing more. Status label used here: `REFERENCE-ONLY` — indexed for mood/palette/line-weight/paneling sensibility only.*
+
+| Library | Contents & location | Binding constraints (recorded, not ruled, by ④) | Source pointer | Status | Owner |
+|---|---|---|---|---|---|
+| **PMU Style Reference Library** | Style/mood reference corpus indexed from the Owner's private Drive folder "pick me up": 7 captured chapters of the *Pick Me Up: Infinite Gacha* webtoon (ch. 51, 85, 86, 103, 142, 144, 189), 85 story-page strips of 357 total folder items, 28 of them integrity-verified and visually reviewed by ④ with per-strip descriptions. The library is **fully Drive-resident**: zero image bytes and zero Drive file ids/links are stored in this public repository, by ④'s licensing decision (the pages are third-party scanlation copies of a licensed commercial series; the repo is public; the Drive folder was link-public at index time). In-repo presence is the text index only. The folder id and per-file id manifest are on record in the private ops channel (①'s dispatch thread, ④'s OPS-0002 report); departments request folder access from the Owner or ①. | REFERENCE-ONLY — style/mood reference exclusively. The locked style law in `studio/02_Art/Art_Direction.md` (DEC-0003 flat-2D PMU look, gpt-image-2; DEC-0004 strip model v5) **remains MASTER**. No panel copying, no tracing, no direct derivation of compositions; mood/palette/line-weight/paneling sensibility only. Whether the library ever becomes in-repo (sharing restricted + repo private + fresh order) is an open Owner ruling — queued in `HANDOFFS/OPS-0002-REPO.md`, not decided here. | `studio/07_Repository/REFERENCES/PMU_style/INDEX.md` (full index: shortlist w/ SHA-256 provenance + complete named inventory); `studio/06_Operations/HANDOFFS/OPS-0002-REPO.md` (handoff + gate manifest) | REFERENCE-ONLY (Drive-resident; no bytes in repo) | ④ (this index record) / ③ (use, always under Art_Direction.md's locked law) / Owner (source folder + any future import ruling) |
+
+---
+
 ## Cross-cutting notes for ⑤ QA
 
 1. **CONFLICT-FOR-QA count this cycle: 2.** SW-01 (Si-woo "junior" vs "2nd-year" year-label ambiguity, minor/non-load-bearing) and CM-01 (Cha Mi-ran v2-era kit-sheet reuse conflicting with Asset_Registry.md's own deprecation blacklist, first surfaced by ③ Visual, carried forward here as this registry's cross-reference). Neither is resolved by this registry — both retain both source pointers for adjudication.

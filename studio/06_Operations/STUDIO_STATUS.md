@@ -3,24 +3,22 @@ schema_version: 1
 studio_state: ACTIVE
 run_id: CYCLE-0002
 run_status: IN_PROGRESS
-current_department: ③ (TASK-0018 trailer gap specs DRAFT, re-dispatched; ⑤ gate next per DEC-0013)
-lease_owner: ① Conductor — night-shift scheduled run, thread cmrrhdfae129m07ad76t99nbj
-lease_started_utc: 2026-07-19T08:41:00Z
+current_department: ① (cycle-close report — next tick's single increment; all dept turns + gates complete)
+lease_owner: ① Conductor — night-shift tick, thread cmrrhdfae129m07ad76t99nbj
+lease_started_utc: 2026-07-19T09:46:00Z
 lease_expires_utc: null
-base_remote_commit: 9345a5ef4d9fe76e845853303a805108c5ead6ac
-last_verified_commit: 9345a5ef4d9fe76e845853303a805108c5ead6ac
+base_remote_commit: 8ae5b112971a3cc62611396d0a9b4d4e8e6bf347
+last_verified_commit: 8ae5b112971a3cc62611396d0a9b4d4e8e6bf347
 active_task_ids: [TASK-0017, TASK-0018, TASK-0019]
 blocking_decision_ids: [DEC-0008]
 next_live_run_not_before_utc: null
 ---
 # Studio Status
-- **Conductor migration COMPLETE + CONFIRMED:** the hourly night-shift schedule now fires in the new conductor thread (`cmrrhdfae129m07ad76t99nbj`) — this update is from its first scheduled tick (2026-07-19 08:41Z). The old pre-Drive conductor thread is retired and its schedule row paused. Google Drive verified available from the new thread.
-- **OPS-0002 (Owner-priority PMU import): DONE + ⑤ GATE PASS.** Delivered as a fully **Drive-resident** reference library on licensing grounds (source = scanlation captures of a licensed series; repo is public): zero image bytes, zero Drive ids/links committed. Artifacts: `studio/07_Repository/REFERENCES/PMU_style/INDEX.md` (28-strip reviewed shortlist with sha256 provenance + full 357-item inventory, commit 3e88cfc3) · CANON_REGISTRY §7 Reference Libraries entry (REFERENCE-ONLY; `Art_Direction.md` DEC-0003/0004 remains master; no panel copying/tracing — beac8a62) · handoff `HANDOFFS/OPS-0002-REPO.md` (3d58a965). Gate: PASS at 9345a5ef (`REVIEWS/OPS-0002_GATE-REPO.md`, QA-210–219; **QA ledger stands at QA-219**). **DEC-0015 queued PENDING** — library residency posture (restrict folder sharing / repo visibility / re-order in-repo import). Recorded as TASK-0020 (DONE).
-- **In flight (this run):** ③ TASK-0018 trailer gap specs DRAFT — **re-dispatched**; the first ③ dispatch aborted mid-run on a platform auth error (401) with zero commits: infra incident, NOT a gate FAIL. Then: ⑤ GATE(③) → ④ TASK-0019 → ⑤ GATE(④) → ① report → Owner.
-- **Model:** FIVE departments (Amendment 1) + QA GATES (Amendment 2). CYCLE-0002 order: ① → ② → ⑤ GATE(②) ✅ → ③ → ⑤ GATE(③) → ④ → ⑤ GATE(④) → ① report → Owner.
-- **Current state:** CYCLE-0002 RUNNING under **NIGHT RULES** (Amendment 2 §A2.4): additive DRAFT work only; no LOCKs, canon retcons, or repository restructures; all Owner decisions queued, never made. DEC-0008 remains PENDING → canon-rewrite block in force; all assignments scoped legal under it.
-- **CYCLE-0002 progress:** ② TASK-0008 ACCEPTED + TASK-0017 GATED-PASS (⑤ GATE(②) PASS — `REVIEWS/CYCLE-0002_GATE-LORE.md`) · OPS-0002 DONE + gated (above) · ③ TASK-0018 in flight · ④ TASK-0019 next · ⑤ gates per turn (severity S0–S4, QA-11).
-- **Owner rulings still pending:** (1) DEC-0008 [P0], (2) TASK-0003 destination, (3) DEC-0009, (4) CM-01, (5) Q-02 Han's 9.0 keepsake choice (options in `ep2_outline_proposal.md`), (6) Q-14 key-visual poster timing, (7) **DEC-0015 PMU library residency posture** (folder still link-public at gate time).
+- **CYCLE-0002: all department turns + gates COMPLETE.** ② ✅ gate PASS (2532de41) · OPS-0002 import ✅ gate PASS (9345a5ef) · ③ TASK-0018 ✅ (ad1ce4e7) gate PASS, zero defects (31b36ee3) · ④ TASK-0019 ✅ (cedeb584 + 8ae5b112) gate **PASS-WITH-FINDINGS** (f458becc — `REVIEWS/CYCLE-0002_GATE-REPO.md`). **QA ledger stands at QA-241.**
+- **RESUME POINT (next tick, single increment): ① cycle-close report.** Owed mechanics: CHANGELOG entries (③ turn, GATE(③), ④ turn, GATE(④), this tick); TASK_QUEUE status cells (TASK-0018 → GATED-PASS awaiting Owner per-item lock review; TASK-0019 → ACCEPTED, ⑤ gate-verified); mint Q-19 for QA-238 (⑤-recommended) and decide OQ-VIS-1…12 formalization (Q-20+); consider TASK rows for OQ-VIS-12's two follow-on proposals and ⑤'s ride-alongs (QA-239 + §2 registry-cards staleness → ④'s next registry pass; QA-240 variance-record banner → ②'s next touch); write HANDOFFS/CYCLE-0002-CLOSE + Owner cycle report; then open CYCLE-0003 planning.
+- **⚠️ NEW S2 FINDING — QA-238 (verified real by ⑤):** canon conflict on Professor Im — Ch.1:159/161 `"Ask Professor Im," … "I did. She gave me the Chorus catechism…"` vs Character_Bible CHAR-005 `~40s male; BLACK hair greying at temples`. Two readings: two distinct Professor Ims, or a locked-lane source contradiction (Im Dan-bi). NOT resolved (canon lanes + DEC-0008 + night rules). Routing: ① mints Q-19 at cycle close; **Owner ruling / ② investigation recommended BEFORE EP.2 drafting or any Im visual work** — ⑤ rates it escalating to S1 if those proceed unresolved. Detail: `REVIEWS/CYCLE-0002_GATE-REPO.md`.
+- **Night-shift protocol (current):** ONE department increment + its gate per tick; sync-first; this file's resume point governs; night rules per Amendment 2 §A2.4 (additive DRAFT only; no LOCKs, canon retcons, or repository restructures; all Owner decisions queued, never made). DEC-0008 remains PENDING → canon-rewrite block in force.
+- **Owner rulings pending:** (1) DEC-0008 [P0], (2) TASK-0003 destination, (3) DEC-0009, (4) CM-01 (= Q-15), (5) Q-02 keepsake (options in `ep2_outline_proposal.md`), (6) Q-14 poster timing, (7) DEC-0015 PMU library residency (folder still link-public at last check), (8) **QA-238 Professor Im (Q-19 pending mint)**.
 - **Still blocked:** substantive canon rewrites, adaptation reclassification, asset-lock changes, releases (DEC-0008); any generation (I-0001/TASK-0003).
 - **Repository:** github.com/lycacallenero55-cpu/patch-10.0 · branch `main` · no branch protection.
-- **Last major update:** [①-EP] CYCLE-0002 ledger reconciliation (this commit) — TASK-0020 + DEC-0015 recorded, CHANGELOG backfilled, ③ re-dispatched. Per QA-12, `base_remote_commit`/`last_verified_commit` record the commit this turn started from (9345a5ef).
+- **Last major update:** [①-EP] tick close after ⑤ GATE(④) PASS-WITH-FINDINGS (this commit). Per QA-12, `base_remote_commit`/`last_verified_commit` record the HEAD this tick started from (8ae5b112); the gate's own commit is f458becc.

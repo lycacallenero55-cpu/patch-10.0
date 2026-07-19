@@ -1,6 +1,6 @@
 # EP.1 Adaptation-Variance Record — Prose Canon vs. Manhwa Adaptation
 
-**RECORD — IN REVIEW (⑤ QA to verify in this cycle)**
+**RECORD — ACCEPTED (⑤ gate-verified CYCLE-0002; per QA-240)**
 
 - **Author:** ② Lore Department, CYCLE-0001 (TASK-0008).
 - **Scope:** compares `manuscript/chapters/00_prologue.md` + `manuscript/chapters/01_the_ninth_world.md` (MANUSCRIPT_CANON, prose) against `manuscript/manhwa/ep1_v3_script.md` (ADAPTATION_CANON — beats) and `readers/episode1_part1.html` + `readers/episode1_part2.html` (DERIVATIVE OUTPUT — current published wording), per `SOURCE_OF_TRUTH.md` classifications.

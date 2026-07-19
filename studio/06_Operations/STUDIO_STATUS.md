@@ -1,26 +1,25 @@
 ---
 schema_version: 1
-studio_state: HALTED-QA-242
+studio_state: ACTIVE-FLEET
 run_id: CYCLE-0003
-run_status: HALTED (⑤ review complete — PASS-WITH-FINDINGS + CRITICAL S0; ① cycle-close deferred)
-current_department: — (loop HALTED per Amendment 3 §A3.4 / DEC-0016; Owner ruling required)
-lease_owner: null (halted by protocol; conductor stands down)
-lease_started_utc: 2026-07-19T13:20:00Z
+run_status: RESUMED (halt lifted by DEC-0017; close-out dispatched as TASK-0025)
+current_department: Production Operations Agent (TASK-0025 CYCLE-0003 close-out)
+lease_owner: Executive Producer Agent (thread cmrrtpkx31cqq06ad4ukncdok)
+lease_started_utc: 2026-07-19T14:37:00Z
 lease_expires_utc: null
-base_remote_commit: 21971bd416ca1956287d73bad6d5b6d7c319d8b0
+base_remote_commit: 88c52148408ab150c435ff0d5695bf31b30c4339
 last_verified_commit: 468c328e40c390b819bb1b0d93eb734690b8520a
-active_task_ids: [TASK-0017, TASK-0024]
-blocking_decision_ids: [DEC-0008, DEC-0015]
+active_task_ids: [TASK-0017, TASK-0024, TASK-0025]
+blocking_decision_ids: [DEC-0008]
 next_live_run_not_before_utc: null
 ---
 # Studio Status
-- **⛔ LOOP HALTED — QA-242 (S0 CRITICAL; ⑤ CYCLE-0003 full-cycle review, `REVIEWS/CYCLE-0003_REVIEW.md`, commit 468c328e).** The Owner's private PMU Drive folder is exposed in this PUBLIC repository: (1) full folder URL at `studio/03_Assets/Asset_Registry.md:67` (present since bootstrap archive commit da35b6d); (2) bare 33-char folder id at `studio/06_Operations/CHANGELOG.md:89` (present since 7befebf, the pre-migration HALT commit). The folder was link-public at review time → by the studio's own recorded standard (PMU INDEX:24), publishing the id ≈ publishing the copyrighted scanlation content. Introduced by NO CYCLE-0003 commit; it survived five prior review passes because per-turn scan scoping never covered ops/asset files (⑤ now runs a repo-wide leak scan every cycle review). NOTE: the id also persists in git HISTORY (e.g. superseded STATUS revisions) — forward-only redaction leaves history copies; only sharing-restriction or history rewrite fully addresses that.
-- **⏫ QA-242 ESCALATION (2026-07-19 13:22Z re-check):** the folder’s live sharing is currently **anyone-with-link / WRITER** (the OPS-0002 gate had recorded reader at 10:06Z). With the folder URL public in this repo, this adds public TAMPER/DELETE risk to the Owner’s source assets on top of the content exposure. Fix unchanged, urgency higher: ruling-menu item (a) — restrict link-sharing. Owner re-alerted (warn) this tick.
-- **NIGHT-SHIFT TICKS: STAND DOWN.** While `studio_state = HALTED-QA-242`: sync, confirm the halt still stands, report one line, make NO dispatches. Only the Owner lifts this state.
-- **OWNER RULING MENU (QA-242 + DEC-0015, consolidated):** (a) **Restrict the Drive folder's link-sharing NOW** (folder Share → "Anyone with the link" → Restricted) — one click, zero repo cost, immediately neutralizes the live exposure and renders every repo/history id inert. Strongly recommended as the immediate step regardless of the rest. (b) Repo visibility: keep public vs make private. (c) In-repo remediation: forward-redaction commits by owning lanes (① `CHANGELOG.md:89` · ③ `Asset_Registry.md:67`) vs full history rewrite (Owner-only, S0-class, invalidates every recorded SHA — not recommended if (a) is done). (d) Resume authorization: continue at ① CYCLE-0003 close once ruled.
-- **CYCLE-0003 state at halt:** all seven commits verified clean at byte level — ② DONE+verified (`b5767294`, `27190692`; QA-240 RESOLVED) · ③ SKIPPED (recorded, §A3.2) · ④ DONE+verified (`201edb3f`, `107bb408`; QA-239 RESOLVED) · ⑤ review DONE (`468c328e`; verdict PASS-WITH-FINDINGS; findings QA-242…QA-247; **ledger at QA-247**) · ① close DEFERRED by this halt (pending: CHANGELOG entries for ②/④/⑤ turns, TASK-0023/0024 status cells, Handbook subtitle fix QA-246, CYCLE-0003-CLOSE handoff + Owner report).
-- **⚠️ Q-19 (Professor Im):** options report verified byte-exact and decision-ready (`WORK_IN_PROGRESS/professor_im_investigation_DRAFT.md`). Ruling remains the Owner's; no EP.2 drafting or Im visuals before it.
-- **Owner rulings pending (13):** **QA-242 exposure ruling [NEW, S0 — see menu above]** · DEC-0008 [P0] · TASK-0003 destination · DEC-0009 · Q-15/CM-01 · Q-02 keepsake · Q-14 poster timing · DEC-0015 (consolidated into QA-242 menu) · Q-19 (options ready) · Q-20 · Q-21 · Q-22 · TASK-0018 lock review.
-- **Night rules remain in force** (Amendment 3 carries §A2.4): additive DRAFT only; no LOCKs, canon retcons, or repository restructures; all Owner decisions queued, never made. DEC-0008 PENDING → canon-rewrite block in force.
-- **Repository:** github.com/lycacallenero55-cpu/patch-10.0 · branch `main` · no branch protection.
-- **Last major update:** [①-EP] HALT-WATCH tick — QA-242 sharing escalation recorded (this commit); halt unchanged, no dispatches. Per QA-12, base = halt commit context (21971bd4); last_verified = ⑤ review (468c328e).
+- **GOVERNANCE TRANSFER (DEC-0017).** The legacy five-role conductor is RETIRED. The 27-agent named fleet under the **Executive Producer Agent** is the sole governor of this repository. Department contracts live in `lycacallenero55-cpu/Patch-10.0-Production-Operating-System` (`studio/departments/`, DEPT-001..027). patch-10.0's production laws (asset locking, flat-2D law, keyframes-before-motion, fair-play narration, write lanes) and Night Rules remain binding. Commit tags from now on: `[AGENT:<Name>]`; legacy circled tags retired.
+- **LEGACY CONDUCTOR NOTICE:** any tick still firing from the legacy conductor schedule (thread cmrrhdfae129m07ad76t99nbj) must make NO writes, post a one-line retirement acknowledgment, and stop. Owner has been asked to pause/delete that schedule.
+- **QA-242: CLOSED - ACCEPTED-RISK (Owner ruling, DEC-0017).** Owner explicitly keeps the PMU Drive folder sharing as-is (folder intentionally available "for the AIs"); no redaction ordered; repo stays public; folder ids in files/history stand. Do NOT re-flag absent material change (new evidence, changed sharing state, actual tampering). DEC-0015 resolved by the same ruling.
+- **CYCLE-0003 close-out in flight: TASK-0025** (Production Operations Agent): deferred CHANGELOG entries (legacy 2/4/5 turns), TASK-0023/0024 status cells, QA-246 Handbook subtitle fix, Handbook Amendment 4 (records DEC-0017), CYCLE-0003-CLOSE handoff + Owner report.
+- **Q-19 (Professor Im):** unchanged - options report decision-ready (`WORK_IN_PROGRESS/professor_im_investigation_DRAFT.md`); ruling remains the Owner's; no EP.2 drafting or Im visuals before it.
+- **Owner rulings pending (11):** DEC-0008 [P0] - TASK-0003 destination - DEC-0009 - Q-15/CM-01 - Q-02 keepsake - Q-14 poster timing - Q-19 (options ready) - Q-20 - Q-21 - Q-22 - TASK-0018 lock review.
+- **Night rules remain in force** (Amendment 3 carries A2.4): additive DRAFT only; no LOCKs, canon retcons, or repository restructures; all Owner decisions queued, never made. DEC-0008 PENDING -> canon-rewrite block in force.
+- **Repository:** github.com/lycacallenero55-cpu/patch-10.0 - branch `main` - no branch protection.
+- **Last major update:** [AGENT:Executive Producer] DEC-0017 governance transfer - halt lifted, QA-242 closed accepted-risk, TASK-0025 dispatched. Per QA-12, base = 88c52148 (halt-watch HEAD this turn built against).

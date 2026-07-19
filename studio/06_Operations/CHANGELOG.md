@@ -101,3 +101,9 @@
 - QA-238 (S2) Professor Im identity/gender conflict verified real and registered; minted as Q-19 this commit; routing: Owner ruling / ② investigation before EP.2 drafting or Im visuals.
 - Close ledger this commit: TASK-0018 → GATED-PASS (awaiting Owner per-item lock review); TASK-0019 → ACCEPTED; Q-20/21/22 minted for the three heavyweight visual proposals (OQ-VIS-7/9/11); OQ-VIS-1–6/8/10/12 remain file-local in the DRAFT spec; TASK-0021/0022/0023 added PROPOSED.
 - CYCLE-0002 declared COMPLETE (all four department turns + gates green; conducted across interactive session + night-shift ticks incl. one 401-aborted ③ dispatch, re-run clean). Cycle report: HANDOFFS/CYCLE-0002-CLOSE.md. Next: CYCLE-0003 opens next tick (② + ⑤ gate, one-increment protocol).
+## FLOW CHANGE + CYCLE-0003 open — 2026-07-19 — [①-EP] conductor
+- Owner order (interactive, conductor thread): per-department QA gates retired effective immediately; DEC-0016 recorded, supersedes DEC-0013.
+- New cycle: ① plan → ② Lore → ③ Visual → ④ Repository → ⑤ full-cycle review → ① report → Owner. ⑤ scope unchanged, once per cycle; CRITICAL (S0/S1) cycle-review findings halt the loop for Owner ruling.
+- Handbook: Amendment 3 added; Amendment 2 marked SUPERSEDED with pointer, text preserved; Night Rules §A2.4 carried forward unchanged.
+- CYCLE-0003 opened per HANDOFFS/CYCLE-0003-EP.md: ② = QA-240 banner correction + TASK-0024 Q-19 investigation (in flight); ③ = skipped this cycle (zero night-legal scope — all ③ work gated on Q-20/21/22, TASK-0003, DEC-0009); ④ = TASK-0023 registry mechanical pass (READY); ⑤ = full-cycle review at end.
+- Live checklist update proposed to Owner as a config card (one department per tick, plain cycle, CRITICAL-halt rule).

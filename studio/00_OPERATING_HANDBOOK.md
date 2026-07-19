@@ -56,6 +56,8 @@ One department writes to the repository per turn. The Studio Owner (Creator) adv
 
 # AMENDMENT 2 — QA GATES (binding; DEC-0013, 2026-07-19)
 
+> **⚠️ SUPERSEDED (2026-07-19) by DEC-0016 / Amendment 3** — the per-department QA-gate mechanics below are retired. §A2.4 Night Rules remain in force, carried forward unchanged by Amendment 3. This text is preserved unmodified for the historical record.
+
 ## A2.1 Rule
 
 ⑤ Quality Assurance is a mandatory quality gate BETWEEN departments, not only an end-of-cycle reviewer. No department's work is treated as accepted — or built upon — until it has passed its gate.
@@ -89,6 +91,41 @@ One department writes to the repository per turn. The Studio Owner (Creator) adv
   3. A QA gate failing twice on the same work stops the run with a written report.
   4. Every run ends by updating STUDIO_STATUS.md and leaving a cycle report for the Owner.
 - All standing blocks remain in force unattended: DEC-0008 gating (until approved), I-0001/TASK-0003 (no generation that depends on non-durable masters), the sealed-twist law, and per-item approval requirements.
+
+---
+
+# AMENDMENT 3 — QA GATES RETIRED: PLAIN SEQUENTIAL CYCLE, FULL-CYCLE REVIEW (binding; DEC-0016, 2026-07-19)
+
+## A3.1 Authority
+
+Adopted by Creator order (2026-07-19, interactive conductor session) and recorded as DEC-0016. Effective immediately, this amendment retires Amendment 2's per-department QA gates (DEC-0013).
+
+## A3.2 Cycle order (supersedes A2.2's sequence)
+
+**① EP (plan + work orders) → ② Lore → ③ Visual Production → ④ Repository & Canon Management → ⑤ QA full-cycle review (ALL departments' work, once, at cycle end) → ① final report → Owner → next cycle.**
+
+- Lane ownership (A1.2) and one-department-writes-per-turn (A1.3/A1.4) are unchanged.
+- A department with no dispatchable work in a given cycle is skipped; the skip and its reason are recorded in the cycle plan and cycle report.
+
+## A3.3 ⑤ Full-cycle review mechanics
+
+- **Cadence and scope:** exactly ONE ⑤ review per cycle, at cycle end, covering EVERY department turn made in that cycle. ⑤'s review scope is unchanged from the gate era — lane compliance (commit file lists vs. A1.2), content verification against canon/spec sources and the laws (v1 §3, 00_STUDIO_RULES §5 micro-rules, SOURCE_OF_TRUTH precedence), label discipline, and turn mechanics (A1.4) — now applied to the whole cycle at once instead of between departments.
+- **Output:** `studio/06_Operations/REVIEWS/CYCLE-NNNN_REVIEW.md` (the established CYCLE-0001_REVIEW.md pattern), findings severity-tagged S0–S4 per QA-11.
+- **Verdict:** exactly one of **PASS / PASS-WITH-FINDINGS / FAIL**.
+
+## A3.4 CRITICAL findings and FAIL handling
+
+- **CRITICAL = S0 or S1.** Any CRITICAL finding in the cycle review HALTS the loop pending an Owner ruling.
+- A FAIL verdict or a CRITICAL finding returns the work to the responsible department ONLY AFTER the Owner rules. ⑤ still verifies, never fixes.
+
+## A3.5 Night Rules carried forward
+
+Amendment 2 §A2.4 — the Night Shift standing order (DEC-0014) and its night rules — continues in force UNCHANGED under this amendment.
+
+## A3.6 Supersession map
+
+- Amendment 2's per-department gate mechanics (A2.1–A2.3) are SUPERSEDED; the Amendment 2 text is preserved unmodified above, under a SUPERSEDED banner, for the historical record. §A2.4 is NOT superseded (A3.5).
+- DEC-0013, and DEC-0014's "gated cycle" phrasing, are to be read against this amendment henceforth (e.g., §A2.4's "ONE full gated cycle" per unattended run now reads as one plain sequential cycle per A3.2).
 
 ---
 

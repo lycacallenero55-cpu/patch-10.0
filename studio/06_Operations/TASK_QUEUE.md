@@ -8,8 +8,8 @@ Statuses: PROPOSED · APPROVED · READY · IN_PROGRESS · PARTIAL · BLOCKED · 
 | TASK-0003 | Master-reference durability migration | WAITING_FOR_CREATOR | P1 | ③ + Creator | I-0001 | YES (destination choice) | repo assets/ vs Drive+checksums |
 | TASK-0004 | Section-tag story_bible.md (canon vs historical) | IN_REVIEW (proposal in WORK_IN_PROGRESS) | P1 | ② Lore | TASK-0001 for semantic edits | no (tagging only) | proposal to WORK_IN_PROGRESS first |
 | TASK-0005 | Episode 2 "Last Day" script | PROPOSED | P1 | ② Lore | TASK-0001 | YES (creator approves words) | beats already locked in canon |
-| TASK-0006 | Trailer v2 keyframe batch (16 KFs) | PROPOSED | P1 | ③ Visual | TASK-0003 recommended | YES (per-KF approval) | storyboard exists; KF production plan = CYCLE-0001 ③ deliverable |
-| TASK-0007 | Missing kits: Ha-eun/Si-woo/Cha kits, Moderator design, Baek design(post-Ch2) | IN_PROGRESS (CYCLE-0001 ③ — spec-draft phase only) | P2 | ③ Visual | TASK-0003 recommended | YES (locks) | this cycle: DRAFT specs only, no locks, no generation |
+| TASK-0006 | Trailer v2 keyframe batch (16 KFs) | PROPOSED | P1 | ③ Visual | TASK-0003 recommended | YES (per-KF approval) | storyboard exists; KF production plan ready (04_Storyboards/Trailer_v2_KF_Production_Plan.md) |
+| TASK-0007 | Missing kits: Ha-eun/Si-woo/Cha kits, Moderator design, Baek design(post-Ch2) | IN_REVIEW (DRAFT specs in 02_Art/Kit_Specs_DRAFT.md) | P2 | ③ Visual | TASK-0003 recommended | YES (locks) | this cycle: DRAFT specs only, no locks, no generation |
 | TASK-0008 | Adaptation-variance record (prose vs EP1 readers) | IN_REVIEW (⑤ to verify) | P2 | ② Lore (+⑤ verify) | — | no | same-event/compressed/reordered table |
 | TASK-0009 | Ratify shot-length harmonization (4–8s std; <4s = editorial inserts) | WAITING_FOR_CREATOR | P3 | ③ Visual | — | YES (DEC-0009) | applied provisionally in Video_Workflow |
 | TASK-0010 | Part 1 bubble restyle to Part-2 spec | PROPOSED | P3 | ③ Visual | — | YES | creator earlier said "leave as is" — needs re-confirm |

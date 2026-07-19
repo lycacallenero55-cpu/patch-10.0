@@ -28,9 +28,9 @@ This repository is **public**. Committing those page images here would publicly 
 
 ---
 
-## A. Curated shortlist — 28 reviewed reference strips
+## A. Curated shortlist — 28 reviewed rows (27 effective reference strips)
 
-④ downloaded and visually reviewed 28 of the 85 story-page strips (4 per captured chapter, spread across each chapter's page range), verified each as a real image (nonzero size, valid RIFF/WEBP magic bytes), and recorded a SHA-256 of the verified Drive copy so any future importer can confirm they retrieved identical bytes. **These files remain Drive-resident; the rows below are index records, not repo files.**
+④ downloaded and visually reviewed 28 of the 85 story-page strips (4 per captured chapter, spread across each chapter's page range), verified each as a real image (nonzero size, valid RIFF/WEBP magic bytes), and recorded a SHA-256 of the verified Drive copy so any future importer can confirm they retrieved identical bytes. **Count correction (QA-218, applied CYCLE-0003 ④):** one of the 28 reviewed rows — PMU-142-A, marked below — is the ch.142 site-banner capture artifact, not a story strip; the effective reference set is **27**, with ch.142 contributing 3 usable references, not 4. The row is kept for provenance completeness. **These files remain Drive-resident; the rows below are index records, not repo files.**
 
 Format: `Ref` · source page (chapter capture subfolder / filename) · verified SHA-256 (Drive copy) · one-line visual description · notable style elements.
 
@@ -52,7 +52,7 @@ Format: `Ref` · source page (chapter capture subfolder / filename) · verified 
 | PMU-103-B | ch.103 / `005.webp` | `0cb0c6dbc11b31d71771c263aab2ebd8d210c92f3137e9fd9fac975334607bf7` | Desert-city mission staging: top-down party-position map, gargoyle statuary, hooded escorts around a white-haired ward. | Sand-gold palette; tactical overhead insert; cloaked silhouette staging. |
 | PMU-103-C | ch.103 / `008.webp` | `67bd7c83445eb88d3aa12d9315a1da99d8506655911dc2722984309cca454f75` | Sandstorm escape: game-style caption bars over a fleeing crowd, domed architecture, street pursuit. | HUD-caption grammar layered on ochre storm light; architecture-forward wide shots. |
 | PMU-103-D | ch.103 / `011.webp` | `0687596b7b0f08d1b57f6d4c9649d18edc8d64658afb37076cf5355450aaf966` | Villain-resolve closer: under-lit red-eyed glare, army caravan wide shot, then a party roster laid out as gacha cards. | Menace lighting from below; roster-card grid as chapter epilogue page. |
-| PMU-142-A | ch.142 / `001.webp` | `8eaedbc0df96078b3f9e71a27b34a70091ad345d8d536515980801d1bef4c6a9` | Wide site-header banner from the page capture (mostly black web chrome) — not a story strip; indexed for provenance completeness only. | N/A — capture artifact, not an art reference. |
+| PMU-142-A ⚠ *(capture artifact — provenance only, not a reference)* | ch.142 / `001.webp` | `8eaedbc0df96078b3f9e71a27b34a70091ad345d8d536515980801d1bef4c6a9` | Wide site-header banner from the page capture (mostly black web chrome) — not a story strip; indexed for provenance completeness only. | N/A — capture artifact, not an art reference. |
 | PMU-142-B | ch.142 / `003.webp` | `e3e7130b0b914f59c9f5ab0c92d41ad5fd7da57d334064367be28cef408f5d72` | Bloody temple aftermath: wounded red-haired fighter, a potion vial pressed into service, cold marble against deep crimson. | Clinical whites vs. saturated blood reds; glass/liquid rendering detail; injury realism inside flat-cel shading. |
 | PMU-142-C | ch.142 / `007.webp` | `10850c48459cf59b03d3d9573aad476d1a2b308ff94dfedceb6c98b39197548c` | Berserk trigger: white-haired transformation wreathed in red aura, burning ship, water-dragon spell, a status card interrupting the page. | Hair-as-energy linework; red/black rage palette; diegetic status cards breaking panel flow. |
 | PMU-142-D | ch.142 / `011.webp` | `c1501b9ccc67f74850a8cca9f3d30db5be571097bb7046f98a6de55158cd446c` | Rampage vow: monstrous red-eye inserts, a glowing figure advancing, casualty-tagged party card grid. | Horror-lit eyes; bold hand-lettered vow typography; card-UI epilogue grammar. |
@@ -85,7 +85,7 @@ Complete inventory of the folder as listed on 2026-07-19 (357 items total: 7 cha
 
 ### B.2 Non-story capture assets (260 files across the 7 subfolders)
 
-Website chrome saved alongside the pages; indexed as a group because the files are individually meaningless for art reference: series-cover thumbnails (`pick-me-up-infinite-gacha*.webp`, one pair per folder), other-series recommendation thumbnails (~180 hash-named `.webp`/`.jpeg`/`.png`/`.gif` files, 2–1,039 KB), site UI images (`default-pp.webp` avatars, logo files), `_slug_.C4jh6z5w.css` (×7), `page.BT_9kWGp.js.download` (×7), `ReaderLayout…js.download` (×7), and Cloudflare beacon blobs (`v4513226…`, ×7). **Not recommended as style reference.**
+Website chrome saved alongside the pages; indexed as a group because the files are individually meaningless for art reference: series-cover thumbnails (`pick-me-up-infinite-gacha*.webp`, one pair per folder), other-series recommendation thumbnails (211 hash-named `.webp`/`.jpeg`/`.png`/`.gif` files raw / 172 distinct names, the same thumbnails recurring across the 7 folder captures — counts verified by ⑤, QA-219; 2–1,039 KB), site UI images (`default-pp.webp` avatars, logo files), `_slug_.C4jh6z5w.css` (×7), `page.BT_9kWGp.js.download` (×7), `ReaderLayout…js.download` (×7), and Cloudflare beacon blobs (`v4513226…`, ×7). **Not recommended as style reference.**
 
 ### B.3 Top-level files (5)
 

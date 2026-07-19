@@ -20,6 +20,9 @@ studio/
   05_Production/
     Video_Workflow.md           ← keyframe-first Veo pipeline, choreography templates, ffmpeg
     Image_Workflow_QA.md        ← generation recipes + QA checklists
+  00_OPERATING_HANDBOOK.md        <- studio constitution (single live agent + specialist subagents)
+  06_Operations/                  <- STATUS, SOURCE_OF_TRUTH, TASK_QUEUE, DECISION_LOG, OPEN_QUESTIONS,
+                                     CHANGELOG, CONTINUITY_LEDGER, VALIDATION_PROFILE, INCIDENTS, HANDOFFS/
 manuscript/
   bible/story_bible.md          ← running lore canon
   chapters/                     ← novel prose (Prologue, Chapter 1)

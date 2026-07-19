@@ -1,0 +1,11 @@
+# Open Questions (UNDECIDED ledger)
+- Q-01 Ch.3 first-death: Im Dan-bi or another named? (creator, at Ch.3 drafting)
+- Q-02 Han's 9.0 keepsake choice (Ch.2): Si-woo's practice score vs festival token vs other
+- Q-03 Go Beom-seok resolution direction (sealed lean exists; final call deferred)
+- Q-04 Ha-eun romance: default OFF; any change needs explicit creator sign-off
+- Q-05 Era names for 1.0/3.0/4.0/6.0/7.0 versions of "Han"
+- Q-06 Requiem rank/economy formalization (deliberately unformalized for now)
+- Q-07 Ending shape / Administrator's nature (candidates sealed)
+- Q-08 Part 1 bubble restyle (TASK-0010) — creator earlier said leave as-is
+- Q-09 Whether any glitch ever returns memory to Cha (high-value card; unplanned)
+- Q-10 Master-reference durable home: repo vs Drive (TASK-0003)

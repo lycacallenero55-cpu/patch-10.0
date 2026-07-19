@@ -17,5 +17,5 @@ Statuses: PROPOSED · APPROVED · READY · IN_PROGRESS · PARTIAL · BLOCKED · 
 | TASK-0012 | Acquire PMU ch.143 reference images (optional completeness) | PROPOSED | P3 | ③ Visual | creator upload | no | Q-13 |
 | TASK-0013 | Merge EP.1 Parts 1+2 into one continuous reader | PROPOSED | P3 | ③ Visual | — | YES | nice-to-have |
 | TASK-0014 | 16:9 trailer master export (after v2 vertical cut) | PROPOSED | P3 | ③ Visual | TASK-0006 | no | storyboard notes it |
-| TASK-0015 | Build studio/07_Repository/ layer: CANON_REGISTRY.md, INDEX.md, TEMPLATES/, PROMPT_LIBRARY.md, ARCHIVE/ | IN_PROGRESS (CYCLE-0001 ④) | P1 | ④ Repo & Canon Mgmt | DEC-0012 | no (records only; registry recommends, never rules) | new lane per DEC-0012 |
+| TASK-0015 | Build studio/07_Repository/ layer: CANON_REGISTRY.md, INDEX.md, TEMPLATES/, PROMPT_LIBRARY.md, ARCHIVE/ | IN_REVIEW (layer built; registry DRAFT) | P1 | ④ Repo & Canon Mgmt | DEC-0012 | no (records only; registry recommends, never rules) | new lane per DEC-0012 |
 | TASK-0016 | Cycle-1 QA audit: lane compliance of all CYCLE-0001 commits + continuity/consistency spot audit + doc quality | IN_PROGRESS (CYCLE-0001 ⑤) | P1 | ⑤ QA | ②③④ turns done | no | findings → REVIEWS/, incidents as warranted |

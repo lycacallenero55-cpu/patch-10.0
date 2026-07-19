@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PATCH 10.0 — EP.1 Part 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:#0b0c0f; font-family:'Noto Sans KR',sans-serif; -webkit-font-smoothing:antialiased; }
+  .topbar { position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between;
+    padding:10px 18px; background:rgba(11,12,15,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.06); }
+  .topbar .t { font-weight:900; letter-spacing:.12em; font-size:13px; color:#fff; } .topbar .t span { color:#9be8ff; }
+  .topbar .ep { font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8a93a3; letter-spacing:.15em; }
+  .strip { max-width:800px; margin:0 auto; padding-top:44px; }
+
+  .sec-black { background:#000; }
+  .sec-white { background:#fdfdfb; }
+
+  .blk { width:100%; } .blk img { width:100%; display:block; }
+  .rel { position:relative; }
+  .g150 { height:150px; } .g300 { height:300px; } .g500 { height:500px; } .g900 { height:900px; }
+
+  /* REFINED small manhwa bubbles — thin outline, tight, never oversized */
+  .bub {
+    background:#fff; color:#111; border:1.5px solid #111; border-radius:50% / 46%;
+    padding:9px 14px; max-width:300px; margin:0 auto;
+    font-size:13.5px; line-height:1.34; font-weight:700; text-align:center; text-transform:uppercase;
+    position:relative;
+  }
+  .bub.onart { position:absolute; max-width:34%; font-size:clamp(9px,1.45vw,12px); padding:6px 10px; line-height:1.3; }
+  .bub .who { display:block; font-size:7.5px; font-weight:800; letter-spacing:.16em; color:#9aa2b0; margin-bottom:2px; }
+  .bub .td, .bub .tu { position:absolute; width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; }
+  .bub .td { bottom:-9px; border-top:11px solid #fff; filter:drop-shadow(0 1.5px 0 #111); }
+  .bub .tu { top:-9px; border-bottom:11px solid #fff; filter:drop-shadow(0 -1.5px 0 #111); }
+  .bub.left { margin-left:5%; } .bub.right { margin-right:5%; margin-left:auto; }
+
+  .shout {
+    background:#fff; color:#111; border:2px solid #111; margin:0 auto; max-width:330px;
+    padding:14px 22px; font-size:15px; font-weight:900; text-align:center; text-transform:uppercase;
+    clip-path: polygon(3% 16%,10% 7%,18% 12%,27% 2%,37% 10%,47% 1%,57% 9%,67% 2%,77% 11%,87% 4%,95% 12%,98% 24%,94% 35%,99% 47%,95% 60%,99% 73%,92% 82%,96% 92%,86% 90%,78% 98%,68% 90%,58% 98%,48% 91%,38% 98%,28% 90%,19% 97%,11% 88%,4% 92%,7% 78%,2% 66%,6% 54%,1% 42%,5% 29%);
+  }
+  .tho {
+    background:#fff; color:#26282e; border:1.5px dashed #6a7180; border-radius:44px;
+    padding:9px 18px; max-width:340px; margin:0 auto;
+    font-size:12.5px; line-height:1.4; font-weight:600; text-align:center; text-transform:uppercase;
+  }
+  .sec-black .tho { background:#0c0d11; color:#e6e9ee; border-color:#3a4150; }
+  .nar {
+    background:#fff; color:#111; border:2px solid #111; padding:10px 16px; max-width:380px; margin:0 auto;
+    font-size:12.5px; font-weight:800; line-height:1.45; text-align:center; text-transform:uppercase;
+  }
+  .sec-black .nar { background:#08090c; color:#eee; border-color:#e8e8e8; }
+  .wrap { padding:0 14px; }
+
+  .plaque { margin:0 auto; max-width:420px; background:#04070c; border:1px solid rgba(155,232,255,.55); position:relative;
+    box-shadow:0 0 40px rgba(155,232,255,.15), inset 0 0 26px rgba(155,232,255,.05);
+    font-family:'IBM Plex Mono',monospace; color:#9be8ff; text-align:center; padding:18px 22px; font-size:14px; letter-spacing:.1em; }
+  .plaque::before,.plaque::after { content:"◆"; position:absolute; color:#9be8ff; font-size:9px; left:50%; transform:translateX(-50%); }
+  .plaque::before { top:-5px; } .plaque::after { bottom:-5px; }
+
+  .sfx { text-align:center; font-weight:900; color:#fff; text-shadow:2px 3px 0 #000,-1px -1px 0 #000; letter-spacing:.04em; font-size:52px; transform:rotate(-6deg); }
+  .sec-white .sfx { color:#111; text-shadow:2px 3px 0 rgba(0,0,0,.12); }
+
+  .cap { margin:0 auto; width:fit-content; background:#111; color:#fff; padding:7px 20px; font-size:12px; font-weight:900; letter-spacing:.3em; }
+
+  .endcard { text-align:center; padding:120px 24px 80px; background:#000; }
+  .endcard .fin { font-family:'IBM Plex Mono',monospace; letter-spacing:.5em; font-size:12px; color:#8a93a3; }
+  .endcard h3 { font-size:26px; font-weight:900; margin:22px 0 8px; color:#fff; }
+  .endcard .tease { color:#8a93a3; font-size:13.5px; line-height:1.9; }
+  .endcard .next { display:inline-block; margin-top:26px; padding:12px 34px; border:1px solid rgba(155,232,255,.5); color:#9be8ff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.3em; }
+
+  @media (prefers-reduced-motion: reduce){ .fx{opacity:1!important;transform:none!important;} }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="t">PATCH <span>10.0</span></div>
+    <div class="ep">EP.01 · PART 2 — TEN YEARS LATER</div>
+  </div>
+
+  <div class="strip">
+
+    <!-- HAESEONG (white) -->
+    <div class="sec-white">
+      <div style="height:120px"></div>
+      <div class="fx"><div class="cap">TEN YEARS LATER · HAESEONG</div></div>
+      <div class="g300"></div>
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/27abd66f-5612-4327-bcb7-412160719f8a.png" alt="Haeseong in festival season"></div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/eba768fb-833c-42d9-9a56-168d9dd6fb9f.png" alt="Cha serves the bowl">
+        <div class="bub onart right" style="top:5%; right:4%;"><span class="who">AUNTIE CHA</span>YOU'VE GOTTEN THIN, STUDENT. SIT AND EAT.<span class="td" style="left:60%"></span></div>
+      </div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/68e1f291-9b37-4c11-a4b3-b1ebc3d079c1.png" alt="Han eats; the callus"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">TEN YEARS IN THIS WORLD, AND HER COOKING STILL TASTES EXACTLY THE SAME.</div></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">THE PATCH REWROTE HER WHOLE LIFE. IT NEVER COULD REWRITE THE CALLUS ON HER HAND.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/c839a776-5725-431c-a5b9-7493c2892ec5.png" alt="Coins under the bowl">
+        <div class="bub onart left" style="top:5%; left:4%;"><span class="who">AUNTIE CHA</span>COME BY ON FESTIVAL NIGHT. FIRST BOWL'S ON ME.<span class="td" style="left:40%"></span></div>
+      </div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="bub right"><span class="who">SEO HAN</span>I'LL BE QUICK.<span class="tu" style="left:50%"></span></div></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">SHE ALWAYS REFUSES TIPS. SO I LEAVE THEM WHERE SHE'LL ONLY FIND THEM LATER.</div></div>
+      <div class="g500"></div>
+    </div>
+
+    <!-- ACADEMY (white) -->
+    <div class="sec-white">
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/2baee793-efe6-458e-a8aa-31c4f6078c34.png" alt="Soryeong Academy"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="nar">THIS WORLD CALLS ME SEO HAN.<br>THIRD-YEAR. THEORY SCHOLARSHIP.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/952dd886-2f70-4852-aa9c-7e550492fcd2.png" alt="The sparring hall">
+        <div class="bub onart left" style="top:6%; left:4%;"><span class="who">PROCTOR</span>PRACTICAL RE-EXAM NUMBER FORTY-EIGHT. SEO HAN.<span class="td" style="left:40%"></span></div>
+      </div>
+      <div class="g300"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/39c62a0f-2c0b-4fb7-8775-f1b7efc4716c.png" alt="Si-woo's declaration">
+        <div class="bub onart left" style="top:5%; left:4%;"><span class="who">SI-WOO</span>SENIOR! TODAY'S THE DAY YOU FINALLY PASS — I CAN FEEL IT!<span class="td" style="left:55%"></span></div>
+      </div>
+      <div class="g300"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/b45e3151-ba72-4350-b1c6-a271fbfbbcfe.png" alt="Han's careless guard">
+        <div class="bub onart right" style="top:5%; right:4%;"><span class="who">SEO HAN</span>...WE'LL SEE.<span class="td" style="left:45%"></span></div>
+      </div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">FORTY-SEVEN LOSSES. EVERY SINGLE ONE ON PURPOSE.</div></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">PRETENDING TO LOSE TO GIFTED KIDS IS THE HARDEST SWORDSMANSHIP I KNOW. AND I'VE HAD NINETY YEARS OF PRACTICE.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/b4844210-dc78-44be-b885-76ed83f5b0fd.png" alt="Si-woo's gold lunge"></div>
+      <div class="wrap fx"><div class="sfx">챙!</div></div>
+      <div class="g150"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/bbbcc649-4f75-4952-bde1-86024fa4b97a.png" alt="The blade stops at his collar"></div>
+      <div class="g300"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/84e6aa67-9986-42a6-99ec-0f1426096530.png" alt="Proctor stamps fail">
+        <div class="bub onart left" style="top:6%; left:4%;"><span class="who">PROCTOR</span>POINT. SEO HAN — FAIL. AGAIN.<span class="td" style="left:45%"></span></div>
+      </div>
+      <div class="g150"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/1defd3cb-40c0-4559-af6f-fe005f97a8e3.png" alt="Students whisper">
+        <div class="bub onart right" style="top:6%; right:4%;"><span class="who">STUDENT</span>FORTY-EIGHT NOW...<span class="td" style="left:40%"></span></div>
+        <div class="bub onart right" style="top:30%; right:8%;"><span class="who">STUDENT</span>WHY DOES HE EVEN KEEP TRYING?<span class="td" style="left:50%"></span></div>
+      </div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/517bc8a6-b63f-44f6-a1eb-6ed662338de2.png" alt="Rematch, sleeve grab">
+        <div class="bub onart left" style="top:5%; left:4%;"><span class="who">SI-WOO</span>YOUR ELBOW DROPPED AT THE END! REMATCH AFTER CLASS — I'LL FIX IT FOR GOOD!<span class="td" style="left:55%"></span></div>
+      </div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="bub right"><span class="who">SEO HAN</span>ONE MORE, THEN. I'LL BE QUICK.<span class="tu" style="left:50%"></span></div></div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/3168ab7a-7a05-4c76-8c28-8df95e91d3c9.png" alt="Si-woo's uneasy question">
+        <div class="bub onart right" style="top:5%; right:4%;"><span class="who">SI-WOO</span>SENIOR... CAN I ASK YOU SOMETHING WEIRD?<span class="td" style="left:45%"></span></div>
+      </div>
+      <div class="g500"></div>
+    </div>
+
+    <!-- THE DREAM (white → uneasy) -->
+    <div class="sec-white">
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/2b5166d0-993d-4ae3-9c08-d331ea816c32.png" alt="Si-woo's desert dream"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="bub left"><span class="who">SI-WOO</span>I KEEP HAVING THIS DREAM. A RED DESERT. WE'RE DIGGING A WELL...<span class="tu" style="left:40%"></span></div></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="bub left"><span class="who">SI-WOO</span>...AND TWO KIDS' NAMES ARE CHALKED ON A WATER TANK. EVERY NIGHT THIS WEEK.<span class="tu" style="left:45%"></span></div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/46b823bf-761e-4e2f-b3c8-40c253073bde.png" alt="Han's white-knuckle tell"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">...THOSE NAMES ARE REAL.</div></div>
+      <div class="g500"></div>
+    </div>
+
+    <!-- THE REALIZATION (black) -->
+    <div class="sec-black">
+      <div style="height:120px"></div>
+      <div class="wrap fx"><div class="nar">I WATCHED A MAN SCRUB THOSE NAMES OFF A TANK.<br>IN A WORLD THAT WAS DELETED TEN YEARS AGO.</div></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="nar">DREAMS DON'T CROSS BETWEEN WORLDS.<br>IN NINETY YEARS — NOT ONCE.</div></div>
+      <div class="g900"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/db245814-b6de-44ab-8cf1-a774724d4014.png" alt="Rooftop, the watch"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">EVERY NIGHT, I CHECK THE MOON.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/10459d76-5f2e-4ce5-9831-49419dbf3312.png" alt="The moon skips twice"></div>
+      <div class="wrap fx"><div class="sfx">지지직</div></div>
+      <div class="g300"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/520b367c-d5d6-4676-a694-9b809ebf1977.png" alt="The world runs early"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">MY COUNT SAID NINE DAYS LEFT.</div></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">THE WORLD JUST ANSWERED: THREE.</div></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="nar">FOR THE FIRST TIME IN NINETY YEARS...<br>IT'S RUNNING EARLY.</div></div>
+
+      <div class="endcard">
+        <div class="fin">— EPISODE 1 · END —</div>
+        <h3>NEXT: LAST DAY</h3>
+        <div class="tease">Seventy-two hours. One bag to pack.<br>And a transfer student who hums a song from a world that never existed.</div>
+        <div class="next">EPISODE 2 — COMING SOON</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.gsap) {
+      gsap.registerPlugin(ScrollTrigger);
+      document.querySelectorAll('.fx').forEach(el=>{
+        gsap.fromTo(el,{opacity:0,y:26},{opacity:1,y:0,duration:.7,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}});
+      });
+      document.querySelectorAll('.sfx').forEach(s=>{
+        gsap.fromTo(s,{scale:.6,rotate:-13,opacity:0},{scale:1,rotate:-6,opacity:1,duration:.5,ease:'back.out(2.5)',scrollTrigger:{trigger:s,start:'top 88%',once:true}});
+      });
+    }
+  </script>
+</body>
+</html>

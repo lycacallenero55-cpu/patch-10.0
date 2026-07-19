@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PATCH 10.0 — EP.1 Part 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:#0b0c0f; font-family:'Noto Sans KR',sans-serif; -webkit-font-smoothing:antialiased; }
+  .topbar { position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between;
+    padding:10px 18px; background:rgba(11,12,15,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.06); }
+  .topbar .t { font-weight:900; letter-spacing:.12em; font-size:13px; color:#fff; } .topbar .t span { color:#9be8ff; }
+  .topbar .ep { font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8a93a3; letter-spacing:.15em; }
+  .strip { max-width:800px; margin:0 auto; padding-top:44px; }
+
+  .sec-black { background:#000; }
+  .sec-white { background:#fdfdfb; }
+
+  .blk { width:100%; }
+  .blk img { width:100%; display:block; }
+  .rel { position:relative; }
+
+  /* measured gap physics (ch51 profile) */
+  .g300 { height:300px; } .g500 { height:500px; } .g900 { height:900px; }
+  .g150 { height:150px; }
+
+  /* PMU lettering */
+  .bub {
+    background:#fff; color:#0e0f12; border:2.5px solid #111;
+    border-radius:48% 52% 50% 50% / 58% 55% 45% 42%;
+    padding:18px 26px; max-width:420px;
+    font-size:16.5px; line-height:1.45; font-weight:800; text-align:center; text-transform:uppercase;
+    position:relative; margin:0 auto;
+  }
+  .bub.onart { position:absolute; max-width:46%; font-size:clamp(11px,1.9vw,15px); padding:12px 18px; }
+  .bub .tail-d, .bub .tail-u { position:absolute; left:50%; width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; }
+  .bub .tail-d { bottom:-14px; border-top:16px solid #111; transform:translateX(-50%) skewX(-14deg); }
+  .bub .tail-d::after { content:""; position:absolute; top:-16px; left:-8px; border-left:8px solid transparent; border-right:8px solid transparent; border-top:13px solid #fff; }
+  .bub .tail-u { top:-14px; border-bottom:16px solid #111; transform:translateX(-50%) skewX(14deg); }
+  .bub .tail-u::after { content:""; position:absolute; top:3px; left:-8px; border-left:8px solid transparent; border-right:8px solid transparent; border-bottom:13px solid #fff; }
+  .bub .who { display:block; font-size:9px; font-weight:800; letter-spacing:.2em; color:#98a1b1; margin-bottom:4px; }
+  .bub.left { margin-left:6%; } .bub.right { margin-right:6%; margin-left:auto; }
+
+  .shout {
+    background:#fff; color:#0e0f12; border:3px solid #111; margin:0 auto; max-width:440px;
+    padding:22px 30px; font-size:18px; font-weight:900; text-align:center; text-transform:uppercase;
+    clip-path: polygon(2% 18%, 8% 8%, 16% 12%, 24% 2%, 33% 10%, 43% 0%, 51% 9%, 61% 2%, 69% 11%, 79% 4%, 86% 13%, 95% 8%, 98% 20%, 93% 30%, 99% 41%, 94% 52%, 100% 64%, 93% 73%, 97% 85%, 88% 90%, 80% 98%, 70% 91%, 60% 99%, 50% 92%, 40% 99%, 30% 91%, 20% 97%, 12% 89%, 4% 93%, 7% 79%, 1% 68%, 6% 56%, 0% 45%, 5% 31%);
+  }
+  .tho {
+    background:#fff; color:#23252b; border:2px solid #111; border-radius:60px;
+    padding:16px 30px; max-width:430px; margin:0 auto;
+    font-size:15px; line-height:1.55; font-weight:700; text-align:center; text-transform:uppercase;
+  }
+  .sec-black .tho { background:#0c0d11; color:#e6e9ee; border-color:#3a4150; }
+  .nar {
+    background:#fff; color:#111; border:2.5px solid #111; padding:14px 22px; max-width:460px; margin:0 auto;
+    font-size:14.5px; font-weight:800; line-height:1.55; text-align:center; text-transform:uppercase;
+  }
+  .sec-black .nar { background:#08090c; color:#eee; border-color:#e8e8e8; }
+  .wrap { padding:0 14px; }
+
+  .plaque {
+    margin:0 auto; max-width:460px; background:#04070c; border:1px solid rgba(155,232,255,.55); position:relative;
+    box-shadow:0 0 44px rgba(155,232,255,.16), inset 0 0 30px rgba(155,232,255,.05);
+    font-family:'IBM Plex Mono',monospace; color:#9be8ff; text-align:center; padding:22px 26px; font-size:16px; letter-spacing:.1em;
+  }
+  .plaque::before, .plaque::after { content:"◆"; position:absolute; color:#9be8ff; font-size:10px; left:50%; transform:translateX(-50%); }
+  .plaque::before { top:-6px; } .plaque::after { bottom:-6px; }
+
+  .sfx { text-align:center; font-weight:900; color:#fff; text-shadow:3px 4px 0 #000, -1px -1px 0 #000; letter-spacing:.04em; font-size:64px; transform:rotate(-7deg); }
+  .sec-white .sfx { color:#111; text-shadow:2px 3px 0 rgba(0,0,0,.15); }
+
+  .cap { margin:0 auto; width:fit-content; background:#111; color:#fff; padding:8px 22px; font-size:12.5px; font-weight:900; letter-spacing:.3em; }
+
+  .title-card { background:#000; text-align:center; padding:150px 20px; }
+  .title-card .k { font-family:'IBM Plex Mono',monospace; color:#9be8ff; font-size:11px; letter-spacing:.5em; }
+  .title-card h1 { font-size:54px; font-weight:900; letter-spacing:.04em; color:#fff; margin:18px 0 8px; }
+  .title-card h1 span { color:#9be8ff; }
+  .title-card .seam { height:2px; background:linear-gradient(105deg, transparent, #dff7ff, #fff, #dff7ff, transparent); margin:26px auto; max-width:430px; transform:rotate(-3deg); box-shadow:0 0 18px rgba(155,232,255,.8); }
+  .title-card .sub { color:#8a93a3; font-size:14px; letter-spacing:.22em; font-weight:800; }
+
+  .endcard { text-align:center; padding:120px 24px 80px; background:#000; }
+  .endcard .fin { font-family:'IBM Plex Mono',monospace; letter-spacing:.5em; font-size:12px; color:#8a93a3; }
+  .endcard h3 { font-size:26px; font-weight:900; margin:22px 0 8px; color:#fff; }
+  .endcard .tease { color:#8a93a3; font-size:13.5px; line-height:1.9; }
+  .endcard .next { display:inline-block; margin-top:28px; padding:12px 34px; border:1px solid rgba(155,232,255,.5); color:#9be8ff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.3em; }
+
+  @media (prefers-reduced-motion: reduce) { .fx { opacity:1 !important; transform:none !important; } }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="t">PATCH <span>10.0</span></div>
+    <div class="ep">EP.01 · PART 1 — THE RED DESERT</div>
+  </div>
+
+  <div class="strip">
+
+    <!-- ============ COLD OPEN (black) ============ -->
+    <div class="sec-black">
+      <div style="height:140px"></div>
+      <div class="wrap fx"><div class="nar">THE WORLD ENDS TONIGHT.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/c5eb345c-6534-4734-83d7-4f6151066e9b.png" alt="The first crack"></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="nar">THIS IS THE EIGHTH TIME I'VE WATCHED IT HAPPEN.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/6da7e511-ceeb-4e34-8825-b2e233eef77e.png" alt="The crack grows"></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="tho">AND NO ONE WILL REMEMBER IT.<br>NO ONE EXCEPT ME.</div></div>
+
+      <div class="g500"></div>
+      <div class="title-card fx">
+        <div class="k">EPISODE 1</div>
+        <h1>PATCH <span>10.0</span></h1>
+        <div class="seam"></div>
+        <div class="sub">THE NINTH WORLD</div>
+      </div>
+    </div>
+
+    <!-- ============ SIX HOURS EARLIER (white) ============ -->
+    <div class="sec-white">
+      <div style="height:120px"></div>
+      <div class="fx"><div class="cap">SIX HOURS EARLIER</div></div>
+      <div class="g300"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/d1ad1b3a-844e-44c6-a55e-ca7b8f961d59.png" alt="The desert and the well"></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/3d9cf9ac-0d0a-481e-98c0-f578d59d3590.png" alt="The chalk names"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="nar">THE TWINS WROTE THEIR NAMES ON THE TANK AGAIN.<br>THE FOREMAN KEEPS WIPING THEM OFF. THEY ALWAYS COME BACK.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/34a89e33-b7a6-40b0-9e35-ff93419a24cf.png" alt="Cha at the wrench">
+        <div class="bub onart" style="top:3%; left:4%;"><span class="who">SERGEANT CHA</span>HOLD THAT BRACE STEADY FOR ME.<span class="tail-d" style="left:70%"></span></div>
+      </div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="bub right" style="max-width:280px;"><span class="who">HAN</span>GOT IT.<span class="tail-u" style="left:30%"></span></div></div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/41f49ba6-b37a-4b53-9d55-9af020223650.png" alt="Two more days">
+        <div class="bub onart" style="top:4%; left:4%; max-width:56%;"><span class="who">SERGEANT CHA</span>TWO MORE DAYS AND THIS WELL IS FINISHED. THE KIDS WILL FINALLY HAVE CLEAN WATER.<span class="tail-d" style="left:60%"></span></div>
+      </div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/82172487-13ab-421b-90b3-c0ce05afb8a1.png" alt="The sun stutters"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">THE SUN JUST STUTTERED AGAIN.</div></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">...SO IT'S TONIGHT.</div></div>
+      <div class="g500"></div>
+
+      <div class="wrap fx"><div class="bub right"><span class="who">HAN</span>SERGEANT. THE WORLD ENDS TONIGHT.<span class="tail-d" style="left:50%"></span></div></div>
+      <div class="g300"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/89023b33-30e7-4c6e-bafe-4511fd5b8a6d.png" alt="The wrench stops"></div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/38d15d2c-9919-4311-8cbb-6c7baf3889cf.png" alt="You're sure?">
+        <div class="bub onart" style="top:4%; left:5%;"><span class="who">SERGEANT CHA</span>...YOU'RE SURE ABOUT THAT?<span class="tail-d" style="left:55%"></span></div>
+      </div>
+      <div class="g300"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/4c939553-e863-4b28-b69d-d501bf995d8e.png" alt="Han answers">
+        <div class="bub onart" style="top:4%; right:5%;"><span class="who">HAN</span>THE WIND WILL STOP AT 11:58. AFTER THAT, THE STARS WILL START MOVING.<span class="tail-d" style="left:40%"></span></div>
+      </div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/bff428a1-9846-4be4-9def-da40940419f6.png" alt="On the scaffold edge">
+        <div class="bub onart" style="top:5%; left:5%;"><span class="who">SERGEANT CHA</span>DOES IT HURT? WHEN IT HAPPENS?<span class="tail-d" style="left:60%"></span></div>
+        <div class="bub onart" style="top:22%; right:5%;"><span class="who">HAN</span>NO. IT DOESN'T HURT AT ALL. AND SOMEHOW... THAT'S THE WORST PART.<span class="tail-d" style="left:35%"></span></div>
+      </div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="bub left"><span class="who">SERGEANT CHA</span>THEN WE KEEP BUILDING UNTIL IT COMES.<span class="tail-u" style="left:60%"></span></div></div>
+      <div class="g500"></div>
+
+      <div class="wrap fx"><div class="nar">A YEAR AGO, I TOLD HER THE TRUTH —<br>THAT THE WORLD RESETS, AND EVERYONE FORGETS.</div></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="nar">SHE'S THE ONLY PERSON WHO EVER BELIEVED ME.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/94244b06-a0c8-41d9-9bfc-d7c77477bd60.png" alt="One order">
+        <div class="bub onart" style="top:4%; left:5%;"><span class="who">SERGEANT CHA</span>THEN LISTEN. ONE LAST ORDER BEFORE IT COMES.<span class="tail-d" style="left:55%"></span></div>
+        <div class="bub onart" style="top:22%; left:8%; max-width:62%;"><span class="who">SERGEANT CHA</span>WHOEVER I BECOME AFTER TONIGHT... DON'T TELL HER ABOUT THIS PLACE.<span class="tail-d" style="left:45%"></span></div>
+      </div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="bub left"><span class="who">SERGEANT CHA</span>LET THAT WOMAN LIVE HER PEACEFUL LITTLE LIFE. EVEN IF IT'S FAKE.<span class="tail-u" style="left:55%"></span></div></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="bub right"><span class="who">HAN</span>...UNDERSTOOD, SERGEANT.<span class="tail-u" style="left:40%"></span></div></div>
+      <div class="g500"></div>
+    </div>
+
+    <!-- ============ 11:58 (black) ============ -->
+    <div class="sec-black">
+      <div style="height:120px"></div>
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/e5bccc6d-578a-4a35-a746-57ce574d4f98.png" alt="11:58"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="nar">11:58. THE WIND STOPPED.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/5f39bca1-a2cf-4d6c-9ff6-ca6f9fcdf815.png" alt="The stars move"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="nar">11:59. THE STARS BEGAN TO MOVE.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/4fd781f1-1ad9-4bf8-8c6a-b6e0f9bb17d2.png" alt="Both hands on the strap"></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="tho">WHATEVER I'M HOLDING CROSSES OVER WITH ME.<br>BUT PEOPLE... PEOPLE CAN'T BE HELD ONTO.</div></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="tho">I PAID TWO LIVES TO LEARN THAT LESSON.</div></div>
+      <div class="g500"></div>
+
+      <div class="wrap fx"><div class="bub left"><span class="who">SERGEANT CHA</span>CLUTCHING THAT BAG AGAIN, HUH.</div></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="bub right"><span class="who">HAN</span>THANK YOU FOR THE WELL, SERGEANT.</div></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="shout">IT'S NOT EVEN FINISHED YET, YOU IDIOT—!!</div></div>
+
+      <div class="g900"></div>
+
+      <div class="wrap fx"><div class="sfx">쩌저적</div></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="plaque">【 VERSION 9.0 — APPLYING 】</div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/dbbca55b-d00b-4e2f-8dc0-c2e8641ec633.png" alt="The wave takes the desert"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="nar">IT DOESN'T DESTROY ANYTHING.<br>IT JUST... REWRITES.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/bdd5bd48-4870-4153-b7fb-bc5fa0dec28f.png" alt="Rewritten mid-sentence">
+        <div class="bub onart" style="top:3%; left:4%;"><span class="who">CHA — WORLD 8.0</span>WHEN THE WELL'S DONE, YOU SHOULD—<span class="tail-d" style="left:60%"></span></div>
+      </div>
+
+      <div class="g900"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/ff7fbb66-e272-48ef-ac42-27e6a31a093a.png" alt="A stranger's smile">
+        <div class="bub onart" style="top:4%; right:4%; max-width:58%;"><span class="who">CHA — WORLD 9.0</span>—COME BY BEFORE WE CLOSE, STUDENT. FIRST BOWL IS ON THE HOUSE.<span class="tail-d" style="left:45%"></span></div>
+      </div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="tho">SHE NEVER GOT TO FINISH THAT SENTENCE.<br><br>TEN YEARS OF HER LIFE... REWRITTEN BETWEEN TWO WORDS.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/e9168774-e6d8-4a9c-ab6a-cda4553eb7f3.png" alt="Sweeping the dust"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="nar">THIS RED DUST IS ALL THAT'S LEFT OF THAT ENTIRE WORLD.</div></div>
+      <div class="g300"></div>
+
+      <div class="blk rel fx">
+        <img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/ae803e8c-ce48-44ac-94f2-ac552ccd2b8c.png" alt="The canteen">
+        <div class="bub onart" style="top:5%; right:6%;"><span class="who">HAN</span>...THE WELL NEVER GOT FINISHED, SERGEANT.<span class="tail-d" style="left:40%"></span></div>
+      </div>
+      <div class="g300"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/80b358f4-e6e6-4884-98dc-b403092667e8.png" alt="Rain washing the dust"></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">I KEPT WHAT I COULD CARRY.</div></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/da67ab54-f442-4412-919c-6b5112244b04.png" alt="The empty street"></div>
+      <div class="g500"></div>
+
+      <div class="blk fx"><img src="https://hyperagent.com/api/files/usergenerated/threads/cmrq4obz903rv08adamuf67hg/images/726c3dfc-f0e9-40cb-bdd4-f7beb6c342ff.png" alt="Into the ninth world"></div>
+      <div class="g300"></div>
+      <div class="wrap fx"><div class="tho">“SCHOOL,” THE SKY SAID.</div></div>
+      <div class="g150"></div>
+      <div class="wrap fx"><div class="tho">GUESS I'LL NEED A UNIFORM.</div></div>
+
+      <div class="endcard">
+        <div class="fin">— PART 1 · END —</div>
+        <h3>PART 2: TEN YEARS LATER</h3>
+        <div class="tease">The noodle shop. The forty-eighth failed exam.<br>And a junior who dreams of a desert he's never seen.</div>
+        <div class="next">CONTINUE — PART 2</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script>
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches === false && window.gsap) {
+      gsap.registerPlugin(ScrollTrigger);
+      document.querySelectorAll('.fx').forEach(el => {
+        gsap.fromTo(el, { opacity: 0, y: 26 }, {
+          opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 92%', once: true }
+        });
+      });
+      const sfx = document.querySelector('.sfx');
+      if (sfx) gsap.fromTo(sfx, { scale: 0.6, rotate: -14, opacity: 0 }, {
+        scale: 1, rotate: -7, opacity: 1, duration: 0.5, ease: 'back.out(2.5)',
+        scrollTrigger: { trigger: sfx, start: 'top 88%', once: true }
+      });
+    }
+  </script>
+</body>
+</html>

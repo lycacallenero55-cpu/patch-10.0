@@ -27,3 +27,11 @@ Small white ovals, 1.5–2px outline, bold ALL-CAPS, tails to speakers, placed i
 
 ## Cinematic identity (if Ufotable shot a flat webtoon)
 Restraint → detonation. Silence is Han's VFX. Low angles for power, high for vulnerability, dutch only for wrongness. Impact frames: 1–2 frame white/black inversion flashes at hit moments (video). Speed lines carry motion; camera never wanders during dialogue. Grief = wide shots + air; dread = empty rooms + distant SFX (boss-reveal rhythm: colossal splash → long gap → empty room + 쿵…).
+
+## APPENDIX A — Style provenance & discoveries (archived from origin thread, 2026-07-19)
+- **How the look was found:** creator supplied a Solo Leveling collage + later ~40 real PMU pages + 3 scroll recordings. Two diagnoses unlocked everything: (1) "AI look" = over-rendering; real webtoon style is RESTRAINT (flat masses, minimal face lines, ≤1–2 shadow tones, single accent glow); (2) "3D look" = volume shading/gloss/DOF; cure = hard flat-2D negative constraints + real pages stacked as refs.
+- **Reference stacking:** multiple real-page refs per generation call materially improves adherence; single-ref calls drift.
+- **Engine history:** Gemini NB2/Pro produced good-but-3D-ish results; the creator blind-picked a GPT-image-2 output ("Take B") as least-AI → engine locked. Do not relitigate without creator.
+- **Environment/character anchor stacks** (plate + master per call + restated hair/scar/outfit text) ended the drift class of bugs (changing proctor face, floors, golden-hair slips, broken anatomy).
+- **Bubble evolution:** baked-in bubbles (misattributed speakers) → HTML overlay w/ name tags → final: SMALL thin-outline ovals placed only in corners that were RESERVED EMPTY at generation time; more lines float in gutters (real PMU behavior).
+- **Copyright note:** the PMU reference pages are analysis/style-anchor material from the creator's own Drive; NEVER commit them to this repository.

@@ -13,3 +13,7 @@ Statuses: PROPOSED · APPROVED · READY · IN_PROGRESS · PARTIAL · BLOCKED · 
 | TASK-0008 | Adaptation-variance record (prose vs EP1 readers) | READY | P2 | Narrative+QA | — | no | same-event/compressed/reordered table |
 | TASK-0009 | Ratify shot-length harmonization (4–8s std; <4s = editorial inserts) | WAITING_FOR_CREATOR | P3 | Storyboard Specialist | — | YES (DEC-0009) | applied provisionally in Video_Workflow |
 | TASK-0010 | Part 1 bubble restyle to Part-2 spec | PROPOSED | P3 | Docs/Reader | — | YES | creator earlier said "leave as is" — needs re-confirm |
+| TASK-0011 | HyperAgent production skill (creator ordered "create LAST", DEC-0007) — possibly superseded by five-department-agent architecture (DEC-0011) | WAITING_FOR_CREATOR | P2 | Director | DEC-0011 | YES | do not create without explicit go |
+| TASK-0012 | Acquire PMU ch.143 reference images (optional completeness) | PROPOSED | P3 | Visual Specialist | creator upload | no | Q-13 |
+| TASK-0013 | Merge EP.1 Parts 1+2 into one continuous reader | PROPOSED | P3 | Docs/Reader | — | YES | nice-to-have |
+| TASK-0014 | 16:9 trailer master export (after v2 vertical cut) | PROPOSED | P3 | Video Specialist | TASK-0006 | no | storyboard notes it |

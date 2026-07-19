@@ -11,3 +11,4 @@
 | DEC-0008 | PENDING | Approve SOURCE_OF_TRUTH register | Creator | TASK-0001 |
 | DEC-0009 | PENDING | Ratify 4–8s shot standard (harmonizes older 2–3s notes) | Creator | TASK-0009 |
 | DEC-0010 | 2026-07-19 | Operating Handbook v1 adopted as studio constitution | Creator (delivered file) + Director | this commit |
+| DEC-0011 | 2026-07-19 | Origin thread RETIRED; production moves to five department agents that read ONLY this repository | Creator | this archive commit |

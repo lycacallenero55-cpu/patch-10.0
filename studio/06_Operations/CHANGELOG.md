@@ -9,3 +9,6 @@
 - 2026-07-19: repo bootstrapped at commit 8d4620f (17 files: studio bibles, lore export, chapters, EP1 script, readers).
 - 2026-07-18: EP.1 Parts 1–2 produced (strip model v5); trailer v1 (calm teaser) produced; art v3 + engine locked; cast masters + environment plates locked.
 - 2026-07-17/18: novel Prologue + Chapter 1 drafted; concept/bible/twist-seal established.
+## [ARCHIVE] — 2026-07-19 — Final knowledge drain from novel thread
+- Appended (never rewrote): Art_Direction Appendix A (style provenance/discoveries); Image_Workflow_QA appendix (verbatim proven prompts + hazards); Video_Workflow appendix (verbatim Veo exemplars, Pillow card recipe, trailer-v1 clip inventory); Asset_Registry appendix (Library display-title lookup, deprecated-title blacklist, PMU provenance); OPEN_QUESTIONS Q-11–Q-14; TASK_QUEUE TASK-0011–0014; DEC-0011; HANDOFFS/THREAD_RETIREMENT.md.
+- NOT preserved into repo, by design: sealed twist bank (creator's spoiler seal — workspace-only, custody question = Q-12); PMU copyrighted reference pages; platform-hosted binaries (masters/readers/trailer — see I-0001/TASK-0003); Master Project Bible platform doc (referenced by ID).

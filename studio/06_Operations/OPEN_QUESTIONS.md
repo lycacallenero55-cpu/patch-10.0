@@ -9,3 +9,7 @@
 - Q-08 Part 1 bubble restyle (TASK-0010) — creator earlier said leave as-is
 - Q-09 Whether any glitch ever returns memory to Cha (high-value card; unplanned)
 - Q-10 Master-reference durable home: repo vs Drive (TASK-0003)
+- Q-11 Witness-interlude POV device (approved in refinement, never yet used) — first deployment target? (suggest EP.3+)
+- Q-12 SEALED twist bank custody: file exists ONLY in origin-thread workspace (off-repo by creator's order). Thread is retiring — creator must choose a durable private home or accept re-derivation by a future writer. DO NOT commit to repo; DO NOT reveal contents to creator.
+- Q-13 PMU ch.143 (Eolka death, part) reference images were never obtained (Drive had HTML only) — acquire if Visual wants full sequence coverage?
+- Q-14 Key-visual poster in locked v3 style (old cover is deprecated-era) — wanted before EP.2 release?

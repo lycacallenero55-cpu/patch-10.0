@@ -1,7 +1,7 @@
 # PATCH 10.0 — Studio Operating Handbook
-## v2.1 — Five-Department Studio Model (Amendments 1–2 + retained v1 body)
+## v2.3 — 27-Agent Fleet Model (Amendments 1–4 + retained v1 body)
 
-> **Version note (2026-07-19, CYCLE-0001):** This handbook was adopted in v1 for a single live agent with temporary specialist subagents (DEC-0010). The Creator has since retired that model (DEC-0011) and ordered a five-department studio (DEC-0012). **Amendments 1 and 2 below are binding and supersede the v1 body wherever they conflict.** The complete v1 text is retained after the amendments because most of its law (studio laws, approvals, source-of-truth, domain workflows, QA, anti-patterns) remains in force unchanged.
+> **Version note (2026-07-19, CYCLE-0001):** This handbook was adopted in v1 for a single live agent with temporary specialist subagents (DEC-0010). The Creator has since retired that model (DEC-0011) and ordered a five-department studio (DEC-0012). **Amendments 1–4 below are binding and supersede the v1 body wherever they conflict.** The complete v1 text is retained after the amendments because most of its law (studio laws, approvals, source-of-truth, domain workflows, QA, anti-patterns) remains in force unchanged.
 
 ---
 
@@ -126,6 +126,37 @@ Amendment 2 §A2.4 — the Night Shift standing order (DEC-0014) and its night r
 
 - Amendment 2's per-department gate mechanics (A2.1–A2.3) are SUPERSEDED; the Amendment 2 text is preserved unmodified above, under a SUPERSEDED banner, for the historical record. §A2.4 is NOT superseded (A3.5).
 - DEC-0013, and DEC-0014's "gated cycle" phrasing, are to be read against this amendment henceforth (e.g., §A2.4's "ONE full gated cycle" per unattended run now reads as one plain sequential cycle per A3.2).
+
+---
+
+# AMENDMENT 4 — GOVERNANCE TRANSFER: THE 27-AGENT FLEET (binding; DEC-0017, 2026-07-19)
+
+## A4.1 Authority
+
+- Owner web ruling, 2026-07-19, recorded as **DEC-0017** in `studio/06_Operations/DECISION_LOG.md` (received in the Executive Producer Agent's control window). The same ruling closed QA-242 as ACCEPTED-RISK and resolved DEC-0015; those dispositions live in the DECISION_LOG and STUDIO_STATUS records, not here.
+
+## A4.2 Governance
+
+- The legacy five-role conductor model (Amendment 1's ①–⑤ departments; DEC-0012) is **RETIRED**.
+- The **27-agent named fleet under the Executive Producer Agent** is the sole governor of this repository (continues the DEC-0011 → DEC-0012 lineage: origin thread → five departments → named fleet).
+- Department contracts — each agent's identity, ownership, authority, and boundaries — live in the operating-system repository `lycacallenero55-cpu/Patch-10.0-Production-Operating-System` under `studio/departments/` (**DEPT-001..DEPT-027**).
+
+## A4.3 Commit-tag convention
+
+- Commits are tagged **`[AGENT:<Name>]`** (e.g., `[AGENT:Executive Producer]`, `[AGENT:Production Operations]`). The legacy circled tags (`[①-EP]`, `[②-LORE]`, `[③-VISUAL]`, `[④-REPO]`, `[⑤-QA]`) are retired; they remain meaningful only as attribution in pre-transfer history and records.
+
+## A4.4 Production laws carried forward (unchanged)
+
+- patch-10.0's production laws bind every fleet agent exactly as they bound the five departments: **asset locking** (assets are LOCKED before generation; drift is re-rolled, never redesigned around), the **flat-2D webtoon style law**, **keyframes before motion**, **fair-play narration**, and **write lanes**.
+- **Night Rules (§A2.4)**, carried forward by Amendment 3, remain in force unchanged: additive DRAFT only; no LOCKs; no canon retcons; no repository restructures; every Owner decision QUEUED (PENDING / WAITING_FOR_CREATOR), never made.
+
+## A4.5 Write lanes — interim carry-over
+
+- Write lanes carry over from the five-role map (§A1.2) by **closest-role equivalence** — the operations ledgers (`studio/06_Operations/**`) are held by the Executive Producer Agent / Production Operations Agent — until a formal 27-lane map is proposed by the Information Architecture Agent and Owner-approved.
+
+## A4.6 Supersession map
+
+- Amendments 1–3 remain in this handbook as the historical record, text preserved; their five-role mechanics (the ①–⑤ department roster, circled commit tags, and conductor cycle mechanics) are **superseded by this amendment wherever they conflict**. The production laws and Night Rules embedded in them carry forward per A4.4.
 
 ---
 

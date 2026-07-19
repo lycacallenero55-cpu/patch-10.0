@@ -1,3 +1,61 @@
+# PATCH 10.0 — Studio Operating Handbook
+## v2.0 — Five-Department Studio Model (Amendment 1 + retained v1 body)
+
+> **Version note (2026-07-19, CYCLE-0001):** This handbook was adopted in v1 for a single live agent with temporary specialist subagents (DEC-0010). The Creator has since retired that model (DEC-0011) and ordered a five-department studio (DEC-0012). **Amendment 1 below is binding and supersedes the v1 body wherever they conflict.** The complete v1 text is retained after the amendment because most of its law (studio laws, approvals, source-of-truth, domain workflows, QA, anti-patterns) remains in force unchanged.
+
+---
+
+# AMENDMENT 1 — THE FIVE-DEPARTMENT MODEL (binding)
+
+## A1.1 Departments
+
+| Dept | Name | Commit prefix | Mandate |
+|---|---|---|---|
+| ① | Executive Producer | `[①-EP]` | Studio management: planning, cycles, work orders, operations documents, arbitration, risk. Writes no canon, no art, performs no QA. |
+| ② | Lore Department | `[②-LORE]` | Story canon: story bible, novel chapters, manhwa episode scripts. Sole author of narrative content. |
+| ③ | Visual Production | `[③-VISUAL]` | Visual specifications and assets: art bibles, asset registry, storyboards, production workflows, published readers. Never changes story canon. |
+| ④ | Repository & Canon Management | `[④-REPO]` | Repository stewardship and canon records: canon registry, repository index, templates, prompt library, archive. Manages canon RECORDS and their labels; never authors canon CONTENT. |
+| ⑤ | Quality Assurance | `[⑤-QA]` | Verification: continuity audits, lane-compliance review, validation profile, incident log, reviews. Reports problems with evidence; never silently fixes canon. |
+
+## A1.2 Write-lane ownership map
+
+- **①** — root `README.md` · `studio/00_STUDIO_RULES.md` · `studio/00_OPERATING_HANDBOOK.md` · `studio/06_Operations/` (except the ⑤-owned files below)
+- **②** — `manuscript/` (`bible/`, `chapters/`, `manhwa/`)
+- **③** — `studio/02_Art/` · `studio/03_Assets/` · `studio/04_Storyboards/` · `studio/05_Production/` · `readers/`
+- **④** — `studio/07_Repository/` (`CANON_REGISTRY.md`, `INDEX.md`, `TEMPLATES/`, `PROMPT_LIBRARY.md`, `ARCHIVE/`), plus meaning-safe mechanical fixes anywhere (links, formatting, index rows) that cannot change meaning
+- **⑤** — `studio/06_Operations/REVIEWS/` · `studio/06_Operations/CONTINUITY_LEDGER.md` · `studio/06_Operations/VALIDATION_PROFILE.md` · `studio/06_Operations/INCIDENTS.md`
+- **Shared (any department, during its own turn):** `TASK_QUEUE.md` and `OPEN_QUESTIONS.md` (append cross-department requests/questions) · `WORK_IN_PROGRESS/` (proposals) · `HANDOFFS/` (own turn note) · `STUDIO_STATUS.md` + `CHANGELOG.md` (turn mechanics, A1.4)
+- `studio/01_Lore/Master_Project_Bible.md` — franchise canon export: ② holds content authority; ④ holds custodial/registry authority. Semantic edits remain blocked until DEC-0008 approval, like all canon.
+- Everything outside a department's lane is **read-only** to it.
+
+## A1.3 Production cycle
+
+**① EP → ② Lore → ③ Visual Production → ④ Repository & Canon Management → ⑤ Quality Assurance → report to Creator → next cycle.**
+
+One department writes to the repository per turn. The Studio Owner (Creator) advances turns manually — or authorizes ① to conduct a full cycle (**Conductor Mode**), in which ① dispatches one department at a time with a complete, self-contained work order and verifies each department's commit on GitHub before dispatching the next.
+
+## A1.4 Turn mechanics (every department, every turn)
+
+1. **Sync first:** read `STUDIO_STATUS.md`, `CHANGELOG.md`, `TASK_QUEUE.md`, `OPEN_QUESTIONS.md`, the newest `HANDOFFS/` note, and every file the task touches. Trust commits, never memory.
+2. Work **only inside your lane** (A1.2). Cross-lane needs go to `TASK_QUEUE.md` or `OPEN_QUESTIONS.md` — never direct edits.
+3. Commit with your department prefix and a descriptive message.
+4. End of turn: update `STUDIO_STATUS.md` + `CHANGELOG.md`, and leave a handoff note in `HANDOFFS/` named `CYCLE-<n>-<dept>.md`.
+5. Labels: DRAFT → IN REVIEW → APPROVED → LOCKED, plus DEPRECATED and UNDECIDED. **Only the Creator approves or LOCKS.** UNDECIDED items live in `OPEN_QUESTIONS.md`; guessing is forbidden.
+
+## A1.5 Reading the v1 body under v2
+
+- v1 "Studio Director / single live agent" → read as: **① EP** for coordination and operations; **the owning department** for lane work. There is no single repository integrator anymore; each department integrates its own lane, one turn at a time.
+- **§6 Single-Agent Operating Model** → superseded by A1.3.
+- **§7–§8 Subagent use and specialist briefs** → those charters now describe the DEPARTMENTS: 8.1 + 8.2 = ② · 8.3 + 8.4 = ③ · 8.6 = ④ · 8.5 = ⑤. Their quality standards remain binding. Departments may still use temporary subagents internally, under the same rules.
+- **§9 First-Run Initialization** → completed in RUN-0001; historical.
+- **§11 / §24 Live-Mode** → applies to whichever agent runs unattended; otherwise unchanged.
+- **§22–§23 Handoff and end-of-run** → per-department turn notes in `HANDOFFS/` using the same template.
+- Everything else — **§3 Permanent Studio Laws, §4 Authority and Human Approval, §5 Source-of-Truth Model, §10 Task System, §12 Safe Git Workflow, §13–§21 domain workflows, §27 Anti-Patterns, §28 Success Standard** — remains in force verbatim.
+
+---
+
+# RETAINED v1 TEXT — historical framing; superseded only where Amendment 1 says so
+
 # PATCH 10.0 — AI Studio Director
 ## Permanent Operating Handbook for a Single Live Agent and Its Temporary Specialist Subagents
 

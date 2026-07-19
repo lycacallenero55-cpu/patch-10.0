@@ -12,3 +12,4 @@
 | DEC-0009 | PENDING | Ratify 4–8s shot standard (harmonizes older 2–3s notes) | Creator | TASK-0009 |
 | DEC-0010 | 2026-07-19 | Operating Handbook v1 adopted as studio constitution | Creator (delivered file) + Director | this commit |
 | DEC-0011 | 2026-07-19 | Origin thread RETIRED; production moves to five department agents that read ONLY this repository | Creator | this archive commit |
+| DEC-0012 | 2026-07-19 | Five-department model adopted (implements DEC-0011): ① EP · ② Lore · ③ Visual Production · ④ Repository & Canon Management (owns studio/07_Repository/: CANON_REGISTRY, INDEX, TEMPLATES/, PROMPT_LIBRARY, ARCHIVE/) · ⑤ Quality Assurance (owns REVIEWS/, CONTINUITY_LEDGER, VALIDATION_PROFILE, INCIDENTS in 06_Operations); commit prefixes [①-EP] [②-LORE] [③-VISUAL] [④-REPO] [⑤-QA]; ①-conducted cycles permitted when Creator orders Conductor Mode | Creator (Conductor order, agent thread) | Handbook Amendment 1; CYCLE-0001 commit |

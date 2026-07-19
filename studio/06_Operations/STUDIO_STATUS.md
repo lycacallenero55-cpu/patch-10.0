@@ -1,21 +1,24 @@
 ---
 schema_version: 1
-studio_state: WAITING_FOR_CREATOR
-run_id: RUN-0001
-run_status: COMPLETE
-lease_owner: null
-lease_started_utc: null
+studio_state: CYCLE_IN_PROGRESS
+run_id: CYCLE-0001
+run_status: IN_PROGRESS
+current_department: ①-EP done → dispatching ②-LORE
+lease_owner: ①-EP (Conductor Mode)
+lease_started_utc: 2026-07-19T05:20:00Z
 lease_expires_utc: null
-base_remote_commit: 8d4620f1cd89cfc34fff577da9f17b3d026fc0c0
-last_verified_commit: PENDING_THIS_COMMIT
-active_task_ids: [TASK-0001]
+base_remote_commit: da35b6d063a5549bf9267defd8eeee2f2bb0a28f
+last_verified_commit: da35b6d063a5549bf9267defd8eeee2f2bb0a28f
+active_task_ids: [TASK-0004, TASK-0007, TASK-0008, TASK-0015, TASK-0016]
 blocking_decision_ids: [DEC-0008]
 next_live_run_not_before_utc: null
 ---
 # Studio Status
-- **Current state:** WAITING_FOR_CREATOR — the proposed SOURCE_OF_TRUTH register (TASK-0001 / DEC-0008) must be approved before substantive canon rewrites, adaptation reclassification, asset-lock changes, or releases.
-- **What is NOT blocked:** conflict inventory, proposals in WORK_IN_PROGRESS/, non-semantic maintenance, creator-directed interactive work in-thread.
-- **Current milestone:** Studio Operations Layer initialized (this run). Next milestone: source-register approval → resume production (EP.2 script or Trailer v2 keyframes, creator's choice).
-- **Repository:** github.com/lycacallenero55-cpu/patch-10.0 · branch `main` · no branch protection detected · history: full (created this week).
-- **Live mode:** NOT yet scheduled. Prerequisites when creator wants it: enable "Let the agent make integration writes on its own," paste §24 checklist into the Live actions field.
-- **Last major update:** RUN-0001 initialization (see HANDOFFS/RUN-0001.md).
+- **Model:** FIVE-department studio active (DEC-0012, Handbook Amendment 1): ① EP → ② Lore → ③ Visual Production → ④ Repository & Canon Management → ⑤ Quality Assurance. Prefixes `[①-EP] [②-LORE] [③-VISUAL] [④-REPO] [⑤-QA]`.
+- **Current state:** CYCLE-0001 running in Creator-authorized Conductor Mode; ① reconciliation committed; departments dispatched in order, one at a time, each commit verified on GitHub before the next.
+- **Still blocked (DEC-0008 pending):** substantive canon rewrites, adaptation reclassification, asset-lock changes, releases. All Cycle-1 work is scoped legal under this block (proposals, tagging, variance records, DRAFT specs, registries, audits). No generation while I-0001/TASK-0003 unresolved.
+- **Cycle-1 assignments:** ② TASK-0004 + TASK-0008 · ③ TASK-0007 (spec-draft phase) + Trailer-v2 KF plan · ④ TASK-0015 (build studio/07_Repository/) · ⑤ TASK-0016 (cycle audit).
+- **Current milestone:** Five-department studio operational + Cycle-1 foundational records complete. Next milestone: DEC-0008 ruling → EP.2 script (TASK-0005) or Trailer v2 keyframes (TASK-0006), Creator's choice.
+- **Repository:** github.com/lycacallenero55-cpu/patch-10.0 · branch `main` · no branch protection.
+- **Live mode:** NOT scheduled.
+- **Last major update:** CYCLE-0001 ① reconciliation (see HANDOFFS/CYCLE-0001-EP.md).

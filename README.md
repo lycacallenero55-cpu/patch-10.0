@@ -8,6 +8,9 @@
 ```
 studio/
   00_STUDIO_RULES.md            ← the operating brain (identity, asset locking, pipeline gates)
+  00_OPERATING_HANDBOOK.md      ← studio constitution v2 (five-department model, Amendment 1)
+  01_Lore/
+    Master_Project_Bible.md     ← on-repo franchise canon export
   02_Art/
     Art_Direction.md            ← locked style law, color script, strip metrics, lettering
     Character_Bible.md          ← locked designs + animation notes + continuity micro-rules
@@ -20,15 +23,18 @@ studio/
   05_Production/
     Video_Workflow.md           ← keyframe-first Veo pipeline, choreography templates, ffmpeg
     Image_Workflow_QA.md        ← generation recipes + QA checklists
-  00_OPERATING_HANDBOOK.md        <- studio constitution (single live agent + specialist subagents)
   06_Operations/                  <- STATUS, SOURCE_OF_TRUTH, TASK_QUEUE, DECISION_LOG, OPEN_QUESTIONS,
                                      CHANGELOG, CONTINUITY_LEDGER, VALIDATION_PROFILE, INCIDENTS, HANDOFFS/
+  07_Repository/                  <- canon registry, repo index, templates, prompt library, archive (④)
 manuscript/
   bible/story_bible.md          ← running lore canon
   chapters/                     ← novel prose (Prologue, Chapter 1)
   manhwa/                       ← episode scripts + published reader HTML
 ```
 The consolidated **Master Project Bible** (22-section franchise document) lives as a platform document; a successor AI loads it by ID (see `studio/00_STUDIO_RULES.md` §7).
+
+## The five departments (DEC-0012)
+① Executive Producer `[①-EP]` → ② Lore `[②-LORE]` → ③ Visual Production `[③-VISUAL]` → ④ Repository & Canon Management `[④-REPO]` → ⑤ Quality Assurance `[⑤-QA]`, one department per turn. See Handbook Amendment 1 for lanes and mechanics.
 
 ## Core laws (short version)
 1. Nothing is generated before its assets exist and are LOCKED.

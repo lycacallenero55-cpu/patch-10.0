@@ -23,6 +23,31 @@
 | ENV-003 | Academy exterior | `2baee793-efe6-458e-a8aa-31c4f6078c34` |
 | ENV-004 | Dorm rooftop night | `8b7d84fa-b94f-4738-89f9-65fd906dad2b` |
 
+## Environment plate SPECS — LOCKED (spec locks; plates pending TASK-0033)
+> SPEC locks (approved text, not images): these plates do not exist yet — TASK-0033 (Environment Art) produces them against the specs locked here, per the Asset Locking Law (`studio/00_STUDIO_RULES.md` §2). The approved bytes live in `studio/02_Art/Trailer_v2_Gap_Specs_DRAFT.md` PART I, pinned at git blob `1356127b39dae889f6559ffaacd4fe1c7e2f5356` (that file's state at commit `4e8ea889c39f55fb7888781bd778a7c79e59d2ad`). The spec file's own label stays DRAFT by design — the LOCK lives here in the registry. PART II (monster/extinction design) and PART III (registry-card UI) of the same file are NOT locked; they remain gated on Q-21/Q-22. Entries record locks only — open questions (official Q-numbers; file-local OQ-VIS proposals) keep their own status in their own ledgers and are not resolved here.
+
+### ENV-SPEC-A (KF-03) — LOCKED
+- **Asset:** ENV-SPEC-A — KF-03 "wave converting desert (wide)": matched mid-conversion pair — sub-plates A1 (8.0 desert settlement, wave entering) + A2 (9.0 Haeseong street, wave entering)
+- **Status:** LOCKED 2026-07-20
+- **Authority:** Owner ruling DEC-0018, 2026-07-20
+- **Source:** `studio/02_Art/Trailer_v2_Gap_Specs_DRAFT.md` PART I, section "ENV-SPEC-A" (anchor `#env-spec-a--kf-03-wave-converting-desert-wide--a-matched-pair-of-mid-conversion-plates`) @ git blob `1356127b39dae889f6559ffaacd4fe1c7e2f5356`
+- **Purpose:** environment-plate production for KF-03 (TASK-0033)
+
+### ENV-SPEC-B (KF-04) — LOCKED
+- **Asset:** ENV-SPEC-B — KF-04 "split-seam Cha", ENVIRONMENT HALF only: two context plates — B1 (8.0 well-scaffold close context, lamplit night) + B2 (9.0 Cha's Kitchen exterior doorway, night rain, lantern). Cha's figure/kit and split-seam pose (KIT-CHAR-004) and the FX-PATCH-on-character grammar question are OUTSIDE this lock.
+- **Status:** LOCKED 2026-07-20
+- **Authority:** Owner ruling DEC-0018, 2026-07-20
+- **Source:** `studio/02_Art/Trailer_v2_Gap_Specs_DRAFT.md` PART I, section "ENV-SPEC-B" (anchor `#env-spec-b--kf-04-split-seam-cha--the-environment-half-only-two-context-plates`) @ git blob `1356127b39dae889f6559ffaacd4fe1c7e2f5356`
+- **Purpose:** environment-plate production for KF-04, environment half (TASK-0033)
+
+### ENV-SPEC-C (KF-12) — LOCKED
+- **Asset:** ENV-SPEC-C — KF-12 "WORLD-TESTIMONY flood: street becoming murim pass": FIRST+LAST frame pair, camera-identical — C1 (9.0 street, festival night, post-patch battle state) + C2 (2.0 murim mountain pass, rain-soaked)
+- **Status:** LOCKED 2026-07-20
+- **Authority:** Owner ruling DEC-0018, 2026-07-20
+- **Source:** `studio/02_Art/Trailer_v2_Gap_Specs_DRAFT.md` PART I, section "ENV-SPEC-C" (anchor `#env-spec-c--kf-12-world-testimony-flood-street-becoming-murim-pass--firstlast-frame-pair-the-centerpiece`) @ git blob `1356127b39dae889f6559ffaacd4fe1c7e2f5356`
+- **Purpose:** environment-plate production for the KF-12 pair (TASK-0033)
+- **Caveat:** Q-20 (formal first-visual-canon adoption for dead-world 2.0) remains PENDING — this lock authorizes the KF-12 trailer plates per DEC-0018 and does not resolve Q-20.
+
 ## Style anchors (real PMU)
 Tiles: STYLE-DAILY `2f103f7c-fb32-47d0-b1a9-bbfa7af6b0ed` · STYLE-ACTION `1bf3c5c8-789e-4af7-a2b8-a2ae09e3df82` · STYLE-QUIET `8bb93088-b0e5-4c11-a10a-0950416f5ec7`. Full chapters on disk: `refs/pmu_ch051|085|086|103|142|144|189/`.
 

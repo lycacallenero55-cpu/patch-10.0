@@ -203,3 +203,8 @@
 - **TASK-0034 (Canon Review):** erratum review delivered (dc13768e, PASS-WITH-FINDINGS); the TASK-0004 addendum verdict is PASS-WITH-FINDINGS but the review-file commit is STAGED behind the reviewer's ask-first approval card. TASK-0004 -> ACCEPTED once it lands.
 - **Two Owner approval cards now gate downstream flow:** (1) six temp-URL mints in the Environment Art thread (plate relay to Visual Review TASK-0036; all six masters sha256-verified against handoff 0b162a38 before the ask); (2) the Canon Review commit above. Both are one-click items surfaced in the EP report; governance held - agents correctly asked before externally-fetchable URLs and paused rather than working around confirmation gates.
 - TASK-0005 EP.2 script DRAFT continues in flight (Lore). This commit touches ops ledgers only; QA-242 stays closed.
+## CYCLE-0006: EP.2 script DRAFT delivered -> reviews dispatched - 2026-07-20 - [AGENT:Executive Producer]
+- **TASK-0005 DELIVERED** (Lore, thread cmrsxh86p11l407adywj9twrk): WORK_IN_PROGRESS/ep2_script_DRAFT.md (cad855df) - all 13 outline beats; Q-02 keepsake as dual Owner-choice variants (P60-P63, explicitly no lean); DRAFT banner (words pending Owner approval, the task's own acceptance gate); handoff + review manifest db7b0757.
+- **TASK-0037 (Canon Review) + TASK-0038 (Continuity Review) minted and dispatched in parallel** on the script DRAFT - one REVIEWS/ file each, CR/CT namespaces continue, no ledger edits (EP records verdicts). On green: the DRAFT goes WAITING_FOR_CREATOR for word-approval.
+- Still pending from the prior stage: the two Owner approval cards (Env-Art temp-URL mint for the TASK-0036 plate relay; Canon-Review commit of the staged TASK-0004 verdict).
+- This commit touches ops ledgers only; QA-242 stays closed.

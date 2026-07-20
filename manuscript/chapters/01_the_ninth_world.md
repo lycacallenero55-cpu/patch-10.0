@@ -158,7 +158,7 @@ He was, against every regulation he had written for himself, close to smiling. H
 
 "Ask Professor Im," he said, standing, gathering his notes.
 
-"I did. She gave me the Chorus catechism and a biscuit." Ha-eun turned a page of the folio without looking at it. Then, absently — and this was the thing, it was *absent*, it cost her nothing, she didn't even hear herself doing it — she began to hum.
+"I did. He gave me the Chorus catechism and a biscuit." Ha-eun turned a page of the folio without looking at it. Then, absently — and this was the thing, it was *absent*, it cost her nothing, she didn't even hear herself doing it — she began to hum.
 
 Four notes. Down, down, a lift, a fall. A little worn tune, the kind that lives in kitchens, in work, in the space between someone's attention and their hands.
 

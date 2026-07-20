@@ -2,14 +2,14 @@
 schema_version: 1
 studio_state: ACTIVE-FLEET
 run_id: CYCLE-0006
-run_status: OPEN (three reviews in flight: TASK-0036 plates VR + TASK-0037/0038 script Canon/Continuity; both Owner cards CLEARED; TASK-0004 ACCEPTED)
-current_department: Visual Review (TASK-0036, plates) + Canon Review (TASK-0037) + Continuity Review (TASK-0038, script), parallel lanes
+run_status: OPEN (TASK-0037 script Canon review DONE - PASS-WITH-FINDINGS; in flight: TASK-0036 plates VR + TASK-0038 script Continuity; script goes to Owner word gate on Continuity green)
+current_department: Visual Review (TASK-0036, plates) + Continuity Review (TASK-0038, script), parallel lanes
 lease_owner: Executive Producer Agent (thread cmrrwy1rc1fli07adf2ba88dt)
 lease_started_utc: 2026-07-19T14:57:00Z
 lease_expires_utc: null
 base_remote_commit: db7b075750ab0155e1ec4314780b8a3e2df49a0f
 last_verified_commit: 468c328e40c390b819bb1b0d93eb734690b8520a
-active_task_ids: [TASK-0017, TASK-0032, TASK-0033, TASK-0036, TASK-0005, TASK-0037, TASK-0038]
+active_task_ids: [TASK-0017, TASK-0032, TASK-0033, TASK-0036, TASK-0005, TASK-0038]
 blocking_decision_ids: []
 next_live_run_not_before_utc: null
 ---
@@ -26,4 +26,4 @@ next_live_run_not_before_utc: null
 - **Owner rulings pending (8 + lane-map adoption):** TASK-0003 destination - DEC-0009 - Q-15/CM-01 - Q-02 keepsake - Q-14 poster timing - Q-20 - Q-21 - Q-22. Consolidated decision-ready portfolio: `WORK_IN_PROGRESS/owner_decision_portfolio_DRAFT.md` (TASK-0026, delivered d4f7a545). PLUS: fleet write-lane map adoption (TASK-0029, QA-verified) -> `WORK_IN_PROGRESS/fleet_write_lane_map_DRAFT.md`.
 - **Night rules remain in force** (Amendment 3 carries A2.4): additive DRAFT only; no LOCKs, canon retcons, or repository restructures; all Owner decisions queued, never made. DEC-0008 APPROVED (DEC-0018) -> the canon-rewrite block is lifted; Owner-authorized corrections and Owner-approved locks proceed through normal review.
 - **Repository:** github.com/lycacallenero55-cpu/patch-10.0 - branch `main` - no branch protection.
-- **Last major update:** [AGENT:Executive Producer] CYCLE-0006: TASK-0004 ACCEPTED (Canon 380b8148 + Continuity 57f69f4d, both green); TASK-0034 engagement DONE; both Owner cards cleared; three reviews in flight (TASK-0036/0037/0038). Per QA-12, base = bc0da3f1 (prior EP HEAD this turn built against).
+- **Last major update:** [AGENT:Executive Producer] CYCLE-0006: TASK-0037 script Canon review DONE (PASS-WITH-FINDINGS 829b6b1f + CR renumber c00f457c; zero critical; CR-005 day-label records conflict + CR-006 precision items queued S4; canon-side fit for Owner word gate). Per QA-12, base = fff136ac (prior EP HEAD this turn built against).

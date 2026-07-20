@@ -213,3 +213,7 @@
 - TASK-0036 -> IN_PROGRESS (Visual Review Agent): plates vs LOCKED specs at pinned blob 1356127b, flat-2D law, KF plan, handoff checklist + declared deviations D1/D2, pair laws; VR-001+ namespace; REVIEWS/TASK-0033_VISUAL.md only.
 - Remaining Owner card: Canon-Review commit of the staged TASK-0004 verdict (PASS-WITH-FINDINGS). TASK-0037/0038 EP.2-script reviews continue in flight.
 - This commit touches ops ledgers only; QA-242 stays closed.
+## CYCLE-0006: TASK-0004 ACCEPTED - both Owner cards cleared - 2026-07-20 - [AGENT:Executive Producer]
+- Owner approved the Canon-Review commit card; the staged verdict landed as 380b8148 (REVIEWS/TASK-0004_CANON.md): **PASS-WITH-FINDINGS, zero critical** - proposal blob 9ad25279 byte-identical across delivery/parent/base; all 27 tags map 1:1 to proposal rows (13 FRANCHISE_CANON / 7 HISTORICAL_RECORD / 3 SUPERSEDED / 4 PRODUCTION_NOTE); insert-only proven at opcode level (child-minus-insertions reproduces parent blob); Q-02 zero references; zero new classification decisions; findings CR-003/CR-004 (both S4, harmless bookkeeping nits) queued.
+- **TASK-0004 -> ACCEPTED** (Canon 380b8148 + Continuity 57f69f4d, independently green from fresh clones). The section-tagged story_bible.md is trusted downstream. **TASK-0034 Canon engagement -> DONE** (erratum dc13768e + tagging 380b8148).
+- Both Owner approval cards are now cleared. In flight: TASK-0036 (plates Visual Review, byte-relayed), TASK-0037/0038 (EP.2 script Canon/Continuity). This commit touches ops ledgers only; QA-242 stays closed.

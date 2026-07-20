@@ -208,3 +208,8 @@
 - **TASK-0037 (Canon Review) + TASK-0038 (Continuity Review) minted and dispatched in parallel** on the script DRAFT - one REVIEWS/ file each, CR/CT namespaces continue, no ledger edits (EP records verdicts). On green: the DRAFT goes WAITING_FOR_CREATOR for word-approval.
 - Still pending from the prior stage: the two Owner approval cards (Env-Art temp-URL mint for the TASK-0036 plate relay; Canon-Review commit of the staged TASK-0004 verdict).
 - This commit touches ops ledgers only; QA-242 stays closed.
+## CYCLE-0006: plate relay complete -> Visual Review dispatched - 2026-07-20 - [AGENT:Executive Producer]
+- Owner approved the Environment-Art URL card; six temp URLs minted (the Env-Art agent re-verified every sha256 against handoff 0b162a38 immediately before minting). EP then ingested all six plates via the URLs, INDEPENDENTLY re-verified 6/6 sha256 PASS (byte sizes exact), and attached the verified bytes directly to the TASK-0036 Visual Review dispatch - removing the 4-hour URL-expiry dependence from the review path. Chain of custody: generation thread -> handoff hashes (0b162a38) -> Env-Art pre-mint re-verification -> EP post-fetch re-verification -> attached bytes.
+- TASK-0036 -> IN_PROGRESS (Visual Review Agent): plates vs LOCKED specs at pinned blob 1356127b, flat-2D law, KF plan, handoff checklist + declared deviations D1/D2, pair laws; VR-001+ namespace; REVIEWS/TASK-0033_VISUAL.md only.
+- Remaining Owner card: Canon-Review commit of the staged TASK-0004 verdict (PASS-WITH-FINDINGS). TASK-0037/0038 EP.2-script reviews continue in flight.
+- This commit touches ops ledgers only; QA-242 stays closed.

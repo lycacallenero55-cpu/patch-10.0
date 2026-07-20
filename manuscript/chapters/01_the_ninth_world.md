@@ -62,7 +62,7 @@ The tells were all where he'd left them. At 3:07 exactly, the birds stopped — 
 
 Nine days of this, by his ledger. The wind quitting early in the evenings. The moon coming up with a stutter, a half-second skip, like a film catching on the reel — he'd timed it off the harbor clocktower three nights running. Every world announced its end to exactly one resident, in the same patient grammar, and after eight endings he could read the countdown the way the sergeant had read weather.
 
-Festival night, said the ledger. Nine days. He had planned accordingly: what to carry, which door to leave by, where a man should stand when a world went under so that he'd surface in the next one on his feet, alone, unremarked. There was an arithmetic to the end of everything and he was, God help him, fluent in it.
+Festival night, three days out, said the ledger. Nine days. He had planned accordingly: what to carry, which door to leave by, where a man should stand when a world went under so that he'd surface in the next one on his feet, alone, unremarked. There was an arithmetic to the end of everything and he was, God help him, fluent in it.
 
 He ate one rice cake and wrapped the other, and went to dinner early, because it was Tuesday.
 
@@ -194,7 +194,7 @@ She went back to her folios. He went out into the corridor, and stood in the lam
 
 On the roof of the old hall, at 11:58, he checked the moon.
 
-This was the routine of the last nine days: harbor clocktower in the left eye, moonrise over the water in the right, the jeweler's watch open in his palm. One skip a night, half a second, regular as rent. Six more skips to festival night. The arithmetic of the end of everything, and he fluent in it, and the bag packed, and the doors chosen, and every farewell already being paid out in installments small enough that no one would ever total them.
+This was the routine of the last nine days: harbor clocktower in the left eye, moonrise over the water in the right, the jeweler's watch open in his palm. One skip a night, half a second, regular as rent. Three more skips to festival night. The arithmetic of the end of everything, and he fluent in it, and the bag packed, and the doors chosen, and every farewell already being paid out in installments small enough that no one would ever total them.
 
 The moon came up off the water, caught—
 
@@ -210,7 +210,7 @@ For the first time in ninety years, the world was running early.
 
 He closed the watch. Stood a while in the wind that had quit too soon, above the city practicing its smile, festival banners breathing along the tram lines — two hundred years of history, ten years old, seventy-two hours to live. Down in the alley behind the tram depot a paper lantern was still lit, the color of a low fire. First bowl's on the house, she'd said. Festival night.
 
-She was going to miss their last dinner by two days, and there was no one in any world he could tell.
+She was going to miss their last dinner, and there was no one in any world he could tell.
 
 "Early," he said to the ninth world, quietly, the way you'd note a guest arriving before the table was set. "You couldn't give me the nine days."
 

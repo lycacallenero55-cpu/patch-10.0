@@ -61,7 +61,7 @@ Post-push blob equality verified for commits 1–3: the API-returned blob SHA ma
 
 - **S87 row (was :182, now :184), CR-008 in-place fix:** ":71, :121, :130" narrowed to ":71" with a visible correction note (":121/:130 … carry no day-label phrasing — moon-skip-cliffhanger descriptions only").
 - **§3.4 gloss (was :116, now :118), CR-008 in-place fix:** "(S34 precedence)" → grounded in `SOURCE_OF_TRUTH.md` :29/:33 (script dialogue "superseded by readers' wording"; readers = "current published wording"), with a visible correction note explaining S34 does not rank script vs readers.
-- **§3.8 attribution (was :186, now :190), CR-008 in-place fix:** "`Video_Workflow.md` / `Trailer_v2_Storyboard.md` moon-skip prompt references" → "`Video_Workflow.md` moon-skip prompt references" with a visible correction note (storyboard carries no moon-skip token — phantom ref).
+- **§3.8 attribution (was :186, now :190), CR-008 in-place fix:** "`Video_Workflow.md` / `Trailer_v2_Storyboard.md` moon-skip prompt references" → "`Video_Workflow.md` moon-skip prompt references" with a visible correction note (storyboard carries no moon-skip token — phantom ref). [correction per CR-009: actual post-edit line = :191 at blob dee45fb0]
 - **CR-007 rows ADDED (:185–:187):** S88 = `REVIEWS/CYCLE-0002_GATE-LORE.md` :38 (`e7a6a195`), S89 = `REVIEWS/CYCLE-0002_GATE-VISUAL.md` :78 (`36f0d959`), S90 = `REVIEWS/CYCLE-0001_REVIEW.md` :66 (`986e42ef`) — the three missed chain-neutral propagation surfaces, quoted byte-exact, each row marked "(Row added under TASK-0044 per CR-007.)".
 - **RULED status notes ADDED:** top-of-file STATUS NOTE block (:12) + §9 status note (:303). Additive only; no historical sentence edited; the census title and DRAFT framing retained as history.
 

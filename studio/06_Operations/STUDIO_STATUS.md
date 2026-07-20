@@ -1,15 +1,15 @@
 ---
 schema_version: 1
 studio_state: ACTIVE-FLEET
-run_id: CYCLE-0005
-run_status: OWNER RULINGS LANDED (DEC-0018) - ready for CYCLE-0006 dispatch (EP.2 pipeline + Ch.1 erratum + 3 approved env plates unblocked)
-current_department: none in flight (fleet standing by; next dispatch on Owner ruling or new evidence)
+run_id: CYCLE-0006
+run_status: OPEN (DEC-0018 execution: TASK-0031 erratum + TASK-0004 tagging [Lore, sequenced] - TASK-0032 ENV-SPEC locks [Asset Mgmt, parallel] - TASK-0033 plates queued behind locks; reviews route as work lands)
+current_department: Lore Agent (TASK-0031 -> TASK-0004) + Asset Management Agent (TASK-0032), parallel lanes
 lease_owner: Executive Producer Agent (thread cmrrwy1rc1fli07adf2ba88dt)
 lease_started_utc: 2026-07-19T14:57:00Z
 lease_expires_utc: null
-base_remote_commit: 3e38d6b9d6927b04208f822351b193997bacf833
+base_remote_commit: 8491cbf8bb87b02efb5000d9b5be32b2cb4496db
 last_verified_commit: 468c328e40c390b819bb1b0d93eb734690b8520a
-active_task_ids: [TASK-0017]
+active_task_ids: [TASK-0017, TASK-0031, TASK-0004, TASK-0032, TASK-0033]
 blocking_decision_ids: []
 next_live_run_not_before_utc: null
 ---
@@ -22,7 +22,8 @@ next_live_run_not_before_utc: null
 - **CYCLE-0004 CLOSED (fleet review, both verdicts in, zero S0/S1):** TASK-0028 Technical QA PASS-WITH-FINDINGS (97d31068; TQA-001 S3 + TQA-002 S4 queued) - TASK-0027 Quality Assurance PASS-WITH-FINDINGS (c94f5531; QA-248 + QA-249, both S4, queued). Fleet-cycle-1 close-out + Owner Decision Portfolio stand VERIFIED. Ride-along reconciliations recorded: TASK-0004 -> BLOCKED (application gated on Owner approval + TASK-0001/DEC-0008), TASK-0015 -> DONE (CYCLE-0001-verified).
 - **CYCLE-0005 CLOSED:** TASK-0029 fleet write-lane map delivered (6e8e0620 + 575bd675) and QA-verified PASS-WITH-FINDINGS (TASK-0030, 27aaf104; zero S0/S1; 80/80 citations resolve; QA-250/QA-251 S4 wording nits queued). **Map -> WAITING_FOR_CREATOR:** adoption via a future Handbook amendment is the Owner's call; QA-249 (stale retained-v1 divider) can ride that same authorized Handbook touch.
 - **OWNER RULINGS LANDED (DEC-0018, 2026-07-20):** DEC-0008 APPROVED as written (source-of-truth register live; canon-rewrite block LIFTED for Owner-authorized work) · Q-19 RESOLVED: ONE Professor Im, MALE — Ch.1:161 "She" ruled a prose erratum, "She"->"He" correction AUTHORIZED (archive-dont-delete; owning lane executes, review verifies) · TASK-0018: ENV-SPEC-A/B/C APPROVED for lock (PART II/III still ride Q-21/Q-22). NOW EXECUTABLE: Ch.1:161 correction task · TASK-0004 semantic edits · TASK-0005 EP.2 script pipeline (both gates clear once the erratum lands) · TASK-0006 gap-KF production for the three approved plates (asset-locking law applies: plates lock before generation).
+- **CYCLE-0006 OPEN (DEC-0018 execution):** TASK-0031 (P0, Lore Agent) Ch.1:161 "She"->"He" erratum per the Q-19 ruling (archive-dont-delete; Canon + Continuity review after landing), then TASK-0004 (P1, same Lore dispatch, sequenced) story_bible section-tagging application. PARALLEL: TASK-0032 (P1, Asset Management Agent) ENV-SPEC-A/B/C LOCK entries in Asset_Registry per DEC-0018 (ENV-SPEC-C entry records the Q-20 formal-2.0-canon interaction as still PENDING; PART II/III NOT locked). TASK-0033 (P1, Environment Art Agent) KF-03/04/12 plate production queued strictly behind the locks (locks before generation; flat-2D + gpt-image-2 law per DEC-0003; Visual Review gates). TASK-0005 EP.2 script -> READY, dispatch deferred until the erratum lands + reviews pass; EP recommends Owner also approve the TASK-0017 outline (quick read; not among the 8).
 - **Owner rulings pending (8 + lane-map adoption):** TASK-0003 destination - DEC-0009 - Q-15/CM-01 - Q-02 keepsake - Q-14 poster timing - Q-20 - Q-21 - Q-22. Consolidated decision-ready portfolio: `WORK_IN_PROGRESS/owner_decision_portfolio_DRAFT.md` (TASK-0026, delivered d4f7a545). PLUS: fleet write-lane map adoption (TASK-0029, QA-verified) -> `WORK_IN_PROGRESS/fleet_write_lane_map_DRAFT.md`.
 - **Night rules remain in force** (Amendment 3 carries A2.4): additive DRAFT only; no LOCKs, canon retcons, or repository restructures; all Owner decisions queued, never made. DEC-0008 APPROVED (DEC-0018) -> the canon-rewrite block is lifted; Owner-authorized corrections and Owner-approved locks proceed through normal review.
 - **Repository:** github.com/lycacallenero55-cpu/patch-10.0 - branch `main` - no branch protection.
-- **Last major update:** [AGENT:Executive Producer] OWNER RULINGS (DEC-0018) recorded — DEC-0008 approved, Q-19 resolved (one Im, male; erratum fix authorized), ENV-SPEC-A/B/C approved for lock. Per QA-12, base = 3e38d6b9 (CYCLE-0005-close HEAD this turn built against).
+- **Last major update:** [AGENT:Executive Producer] CYCLE-0006 opened - DEC-0018 execution: Lore (TASK-0031 erratum -> TASK-0004 tagging) + Asset Management (TASK-0032 locks) dispatched in parallel; TASK-0033 plates staged behind locks; TASK-0005 -> READY (sequenced). Per QA-12, base = 8491cbf8 (DEC-0018 HEAD this turn built against).
